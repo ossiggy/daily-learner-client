@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Article from './components/article';
 
-class App extends Component {
+class Dashboard extends Component {
+  constructor(props){
+    super(props);
+
+
+  }
+
   render() {
+    const articles = this.props.posts.map((article, i) => {
+      return <Article key={i} {...this.props.posts[i]} />
+    });
+
     return (
       <div className="App">
         <header className="App-header">
@@ -11,11 +22,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          {articles}
         </p>
       </div>
     );
   }
 }
 
-export default App;
+export default Dashboard;
