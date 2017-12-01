@@ -88,12 +88,12 @@ export const updateArticleError =(err) => ({
 })
 
 export const updateArticle = article => dispatch => {
-  return fetch(`${API_BASE_URL}/articles`, {
+  return fetch(`${API_BASE_URL}/articles/:id`, {
       method: 'PUT',
       headers: {
           'content-type': 'application/json'
       },
-      body: Object.assign({}, res.json(), JSON.stringify(article))
+      body: JSON.stringify(article)
   })
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())

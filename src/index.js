@@ -5,7 +5,7 @@ import './index.css';
 import Dashboard from './Dashboard';
 import registerServiceWorker from './registerServiceWorker';
 
-const posts = [{
+const articles = [{
   title: 'hello',
   content: 'hello hello hello',
   dateCreated: '28 November 2017',
