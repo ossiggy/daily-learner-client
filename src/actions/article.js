@@ -25,7 +25,7 @@ export const fetchArticle = () => dispatch => {
     if(!res.ok) {
       return Promise.reject(res.statusText);
     }
-    return res.json()
+    return res.json({})
   }).then(article => {
     dispatch(fetchArticleSuccess(article));
   });
