@@ -3,6 +3,34 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
+export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS';
+export const fetchArticlesSuccess = article => ({
+  type: FETCH_ARTICLES_SUCCESS,
+  article
+});
+
+export const FETCH_ARTICLES_REQUEST ='FETCH_ARTICLES_REQUEST';
+export const fetchArticlesRequest = () => ({
+  type: FETCH_ARTICLES_REQUEST
+});
+
+export const FETCH_ARTICLES_ERROR = 'FETCH_ARTICLES_ERROR';
+export const fetchArticlesError =(err) => ({
+  type: FETCH_ARTICLES_ERROR,
+  error: err
+})
+
+export const fetchArticles = () => dispatch => {
+  return fetch(`${API_BASE_URL}/articles`).then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json({})
+  }).then(articles => {
+    dispatch(fetchArticleSuccess(articles));
+  });
+};
+
 export const FETCH_ARTICLE_SUCCESS = 'FETCH_ARTICLE_SUCCESS';
 export const fetchArticleSuccess = article => ({
   type: FETCH_ARTICLE_SUCCESS,

@@ -11,8 +11,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    const articles = this.props.posts.map((article, i) => {
-      return <Article key={i} {...this.props.posts[i]} />
+    const articles = this.props.articles.map((article, i) => {
+      return <Article key={i} {...this.props.articles[i]} />
     });
 
     return (
