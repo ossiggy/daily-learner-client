@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 
 import {articleReducer} from './article';
-import {authReducer} from './auth';
-import {protectedDataReducer} from './protected-data';
+import authReducer from './auth';
+import protectedDataReducer from './protected-data';
 import {userReducer} from './users';
 
 export default combineReducers({

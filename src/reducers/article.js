@@ -67,7 +67,7 @@ export const articleReducer = (state=initialState, action) => {
     })
   }
   if(action.type === actions.UPDATE_ARTICLE_REQUEST) {
-    return Onject.assign({}, state, {
+    return Object.assign({}, state, {
       loading: true
     })
   }

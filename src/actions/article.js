@@ -156,9 +156,7 @@ export const deleteArticleError =(err) => ({
 
 export const DELETE_ARTICLE = 'DELETE_ARTICLE';
 export const deleteArticle = () => dispatch => {
-  return fetch(`${REACT_APP_API_BASE_URL}/api/articles/:id`, {
+  return fetch(`${API_BASE_URL}/api/articles/:id`, {
     method: 'delete'
-  }).then(() => {
-    dispatch(fetchDog())
-  });
+  }).then(res => res.send(204))
 };
