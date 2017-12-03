@@ -4,11 +4,6 @@ import './App.css';
 import Article from './components/article';
 
 class Dashboard extends Component {
-  constructor(props){
-    super(props);
-
-
-  }
 
   render() {
     const articles = this.props.articles.map((article, i) => {
