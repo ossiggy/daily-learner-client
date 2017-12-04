@@ -1,6 +1,6 @@
 import {
-  FETCH_ARTICLES_SUCCESS,
-  FETCH_ARTICLES_ERROR
+  FETCH_ALL_ARTICLES_SUCCESS,
+  FETCH_ALL_ARTICLES_ERROR
 } from '../actions';
 
 const initialState = {
@@ -9,12 +9,12 @@ const initialState = {
 };
 
 export default function authReducer(state = initialState, action) {
-  if (action.type === FETCH_ARTICLES_SUCCESS) {
+  if (action.type === FETCH_ALL_ARTICLES_SUCCESS) {
       return Object.assign({}, state, {
           data: action.data,
           error: null
       });
-  } else if (action.type === FETCH_ARTICLES_ERROR) {
+  } else if (action.type === FETCH_ALL_ARTICLES_ERROR) {
       return Object.assign({}, state, {
           error: action.error
       });

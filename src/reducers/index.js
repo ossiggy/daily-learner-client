@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
-import {articleReducer} from './article';
+import {articlesReducer} from './article';
 import authReducer from './auth';
 import {userReducer} from './users';
 
 export default combineReducers({
-  article: articleReducer,
+  articles: articlesReducer,
   auth: authReducer,
   user: userReducer
 })

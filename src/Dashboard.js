@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import Article from './components/article';
-import {fetchArticles} from './actions/'
+import {fetchAllArticles} from './actions/'
 
 export class Dashboard extends Component {
 
   componentDidMount(){
-    this.props.dispatch(fetchArticles())
+    this.props.dispatch(fetchAllArticles())
   }
 
   render() {
@@ -27,9 +27,9 @@ export class Dashboard extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           {articles}
-        </p>
+        </div>
       </div>
     );
   }
@@ -38,7 +38,8 @@ export class Dashboard extends Component {
 export const mapStateToProps = state => {
   console.log(state)
   return {
-    articles: state.article.data
+    articles: state.articles.data,
+    loggedIn: true
   }
 }
 

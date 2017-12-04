@@ -6,19 +6,19 @@ const initialState = {
   error: null
 };
 
-export const articleReducer = (state=initialState, action) => {
-  if(action.type === actions.FETCH_ARTICLES_SUCCESS) {
+export const articlesReducer = (state=initialState, action) => {
+  if(action.type === actions.FETCH_ALL_ARTICLES_SUCCESS) {
     return Object.assign({}, state, {
       data: action.articles, //I am expecting an array to be returned from this action
       loading: false
     })
   }
-  if(action.type === actions.FETCH_ARTICLES_REQUEST) {
+  if(action.type === actions.FETCH_ALL_ARTICLES_REQUEST) {
     return Object.assign({}, state, {
       loading: true
     })
   }
-  if(action.type === actions.FETCH_ARTICLES_ERROR) {
+  if(action.type === actions.FETCH_ALL_ARTICLES_ERROR) {
     return Object.assign({}, state, {
       error: action.error,
       loading: false

@@ -3,12 +3,12 @@ import React from 'react';
 export default function Article(props){
   return (
     <article>
-      <header>{props.title}</header>
-      <main>{props.content}</main>
-      <footer>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+      <section>
         <span>{props.dateCreated}</span>
         <span>{props.tag}</span>
-      </footer>
+      </section>
     </article>
   )
 }
