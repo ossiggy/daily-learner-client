@@ -95,4 +95,5 @@ export const articleReducer = (state=initialState, action) => {
       loading: false
     })
   }
+  return state;
 }

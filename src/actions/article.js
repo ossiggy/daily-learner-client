@@ -4,9 +4,9 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS';
-export const fetchArticlesSuccess = article => ({
+export const fetchArticlesSuccess = articles => ({
   type: FETCH_ARTICLES_SUCCESS,
-  article
+  articles
 });
 
 export const FETCH_ARTICLES_REQUEST ='FETCH_ARTICLES_REQUEST';
@@ -21,13 +21,15 @@ export const fetchArticlesError =(err) => ({
 })
 
 export const fetchArticles = () => dispatch => {
+  console.log('fetching articles')
   return fetch(`${API_BASE_URL}/articles`).then(res => {
     if(!res.ok) {
       return Promise.reject(res.statusText);
     }
-    return res.json({})
+    return res.json()
   }).then(articles => {
-    dispatch(fetchArticleSuccess(articles));
+    console.log(articles)
+    dispatch(fetchArticlesSuccess(articles));
   });
 };
 

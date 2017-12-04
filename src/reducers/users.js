@@ -42,4 +42,5 @@ export const userReducer = (state=initialState, action) => {
       loading: true
     })
   }
+  return state;
 }

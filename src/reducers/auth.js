@@ -1,7 +1,7 @@
 import {
-  FETCH_PROTECTED_DATA_SUCCESS,
-  FETCH_PROTECTED_DATA_ERROR
-} from '../actions/protected-data';
+  FETCH_ARTICLES_SUCCESS,
+  FETCH_ARTICLES_ERROR
+} from '../actions';
 
 const initialState = {
   data: '',
@@ -9,12 +9,12 @@ const initialState = {
 };
 
 export default function authReducer(state = initialState, action) {
-  if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
+  if (action.type === FETCH_ARTICLES_SUCCESS) {
       return Object.assign({}, state, {
           data: action.data,
           error: null
       });
-  } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
+  } else if (action.type === FETCH_ARTICLES_ERROR) {
       return Object.assign({}, state, {
           error: action.error
       });
