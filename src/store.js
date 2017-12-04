@@ -6,7 +6,7 @@ import reducer from './reducers/';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-const authToken = loadAuthtoken();
+const authToken = loadAuthToken();
 if(authToken) {
   const token = authToken;
   store.dispatch(setAuthToken(token));
