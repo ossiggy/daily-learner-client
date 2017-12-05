@@ -1,22 +1,21 @@
 import {
-  FETCH_ALL_ARTICLES_SUCCESS,
-  FETCH_ALL_ARTICLES_ERROR
+  SET_AUTH_TOKEN,
+  SET_CURRENT_USER
 } from '../actions';
 
 const initialState = {
-  data: '',
-  error: null
+  authToken: null,
+  currentUser: null
 };
 
 export default function authReducer(state = initialState, action) {
-  if (action.type === FETCH_ALL_ARTICLES_SUCCESS) {
+  if (action.type === SET_AUTH_TOKEN) {
       return Object.assign({}, state, {
-          data: action.data,
-          error: null
+          authToken: action.authToken
       });
-  } else if (action.type === FETCH_ALL_ARTICLES_ERROR) {
+  } else if (action.type === SET_CURRENT_USER) {
       return Object.assign({}, state, {
-          error: action.error
+          currentUser: action.currentUser
       });
   }
   return state;
