@@ -4,7 +4,6 @@ import logo from '../logo.svg';
 import '../App.css';
 import Article from '../components/article';
 import {fetchAllArticles} from '../actions/';
-import {refreshAuthToken} from '../actions/auth';
 
 export class Dashboard extends Component {
 
