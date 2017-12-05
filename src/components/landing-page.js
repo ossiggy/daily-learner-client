@@ -21,8 +21,8 @@ export default function LandingPage(props){ //first page you see, decide whether
         that can be utilized in a variety of different ways. You can track your learning patterns and
         even write your own best seller on all that you've learned.
       </p>
+      <Link to='/register'>Sign Up And Start Tracking</Link>
       <LoginForm />
-      <Link to='/register'>Sign Up</Link>
     </div>
   )
 }
