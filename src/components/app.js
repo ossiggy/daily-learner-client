@@ -13,4 +13,50 @@ export class App extends React.Component {
       this.props.dispatch(refreshAuthToken());
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.loggedIn && !this.props.loggedIn){
+      this.startPeriodicRefresh();
+    }
+    if(!nextProps.loggedIn && this.props.loggedIn){
+      this.stopPeriodicRefresh();
+    }
+  }
+
+  componentWillUnmount(){
+    this.stopPeriodicRefresh();
+  }
+
+  startPeriodicRefresh(){
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60*60*1000
+    );
+  }
+
+  stopPeriodicRefresh() {
+    if(!this.refreshInterval) {
+      return;
+    }
+
+    clearInterval(this.refreshInterval);
+  }
+
+  render(){
+    return (
+      <div className="app">
+        {/* Header will go here */}
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/articles" component={Article} />
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = state => ({
+  hasAuthToken: state.auth.authToken !== null,
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default withRouter(connect(mapStateToProps)(App));
