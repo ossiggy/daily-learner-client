@@ -9,7 +9,7 @@ const initialState = {
 export const userReducer = (state=initialState, action) => {
   if(action.type === actions.FETCH_USER_SUCCESS) {
     return Object.assign({}, state, {
-      data: action.users, //I am expecting an array to be returned from this action
+      data: action.user, //I am expecting an array to be returned from this action
       loading: false
     })
   }

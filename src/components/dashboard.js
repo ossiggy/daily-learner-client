@@ -9,7 +9,7 @@ export class Dashboard extends Component {
 
   // component
 
-  componentMount(){
+  componentDidMount(){
     this.props.dispatch(fetchAllArticles())
   }
 
