@@ -10,6 +10,7 @@ export class ArticleForm extends React.Component {
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
   }
+
   render(){
     let successMessage;
     if(this.props.submitSucceeded) {
@@ -39,17 +40,20 @@ export class ArticleForm extends React.Component {
         <Field
           name="title"
           type="text"
-          component={articleInput}
-          label="Name"
+          component={ArticleInput}
+          label="Title"
         />
         <Field 
         name="content"
-        type="text"
-        component={articleInput}
-        label="Name"
+        element="textarea"
+        component={ArticleInput}
+        label="Content"
         />
         <Field 
         name="tags"
+        type="text"
+        component={ArticleInput}
+        label="Tags"
         //make its own component? action?
         //create array of tags when form is submitted
         />
