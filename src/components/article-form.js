@@ -15,7 +15,7 @@ export class ArticleForm extends React.Component {
     let successMessage;
     if(this.props.submitSucceeded) {
       successMessage =(
-        <div className="lesson-learned-alert">
+        <div className="lesson-learned-success">
           Lesson Learned!
         </div>
       )
@@ -32,9 +32,7 @@ export class ArticleForm extends React.Component {
 
     return (
       <form
-        onSubmit={this.props.handleSubmit(article => 
-          this.onSubmit(article)
-        )}>
+        onSubmit={article => this.onSubmit(article)}>
         {successMessage}
         {errorMessage}
         <Field
@@ -66,3 +64,9 @@ export class ArticleForm extends React.Component {
     )
   }
 }
+
+export default reduxForm({
+  form: 'article',
+  onSubmitFail: (errors, dispatch) =>
+      dispatch(focus('article', Object.keys(errors)[0]))
+})(ArticleForm);
