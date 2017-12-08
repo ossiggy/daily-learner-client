@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import LoginForm from './login-form';
+import Header from './header';
 
 export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
   if(props.loggedIn){
@@ -9,9 +10,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
   }
   
   return (
-    <div className="home">
-      <h1 className="main-title">Daily Learner</h1>
-      <h2 className="subtitle">Tracking life lessons one day at a time</h2>
+    <section className="info-section">
       <p className="site-info">
         The expression goes, you learn something new every day. Imagine how much you could
         benefit from having a collection of all that information on tap and ready to be accessed?
@@ -23,7 +22,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
       </p>
       <Link to='/register'>Sign Up And Start Tracking</Link>
       <LoginForm />
-    </div>
+    </section>
   )
 }
 

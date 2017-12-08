@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
 import Dashboard from './dashboard';
+import Header from './header';
 import Article from './article';
 import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
@@ -46,7 +47,7 @@ export class App extends React.Component {
   render(){
     return (
       <div className="app">
-        {/* Header will go here */}
+        <Header />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/dashboard" component={Dashboard} />
