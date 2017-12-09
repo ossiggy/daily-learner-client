@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Article from '../components/article';
 import {fetchAllArticles} from '../actions/';
@@ -13,7 +14,7 @@ export class ArticleViewer extends Component {
     let articles;
     if(this.props.articles){
       articles = this.props.articles.map((article, i) => {
-      return <Article key={i} {...this.props.articles[i]} />
+      return <Link to={`/articles/${article.id}`}>{article.title}</Link>
     });
   }
 

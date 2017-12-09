@@ -52,8 +52,9 @@ export const fetchArticleError =(err) => ({
   error: err
 })
 
-export const fetchArticle = () => dispatch => {
-  return fetch(`${API_BASE_URL}/articles/:id`).then(res => {
+export const fetchArticle = (id) => dispatch => {
+  return fetch(`${API_BASE_URL}/articles/${id}`).then(res => {
+    console.log('fetching single article')
     if(!res.ok) {
       return Promise.reject(res.statusText);
     }

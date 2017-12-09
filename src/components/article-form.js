@@ -32,7 +32,7 @@ export class ArticleForm extends Component {
 
     return (
       <form
-        onSubmit={article => this.onSubmit(article)}>
+        onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
         {successMessage}
         {errorMessage}
         <Field
@@ -51,7 +51,7 @@ export class ArticleForm extends Component {
         name="tags"
         type="text"
         component={ArticleInput}
-        label="Tags"
+        label="Tag"
         //create array of tags when form is submitted
         //make its own component? action?
         />
