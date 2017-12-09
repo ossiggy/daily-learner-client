@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Article from '../components/article';
 import {fetchAllArticles} from '../actions/';
@@ -9,12 +9,16 @@ export class ArticleViewer extends Component {
   componentDidMount(){
     this.props.dispatch(fetchAllArticles())
   }
-
+  
   render() {
+    if(!this.props.loggedIn){
+      return <Redirect to='/' />
+    }
     let articles;
     if(this.props.loading){
       articles = <h2>loading</h2>
     }
+  
     if(Object.keys(this.props.articles).length > 0){
       articles = this.props.articles.map((article, i) => {
       return <Link to={`/articles/${article.id}`}>{article.title}</Link>
