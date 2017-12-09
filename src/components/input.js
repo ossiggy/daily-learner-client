@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './input.css';
+
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
       // if the user moves away from a field, change focus to the current field

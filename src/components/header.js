@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setCurrentUser, setAuthToken} from '../actions';
 import {clearAuthToken} from '../local-storage';
+import './header.css';
 import TopNav from './top-nav';
 
 export class Header extends React.Component {
