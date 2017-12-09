@@ -7,7 +7,7 @@ export default class ArticleInput extends React.Component {
     }
   }
   render() {
-    const Element = this.props.element || 'article-input';
+    const Element = this.props.element || 'input';
 
     let error;
     if (this.props.meta.touched && this.props.meta.error){

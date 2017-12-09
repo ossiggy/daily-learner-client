@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import {connect} from 'react-redux';
 
@@ -6,7 +6,7 @@ import {postArticle} from '../actions'
 
 import ArticleInput from './article-input';
 
-export class ArticleForm extends React.Component {
+export class ArticleForm extends Component {
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
   }
@@ -52,8 +52,8 @@ export class ArticleForm extends React.Component {
         type="text"
         component={ArticleInput}
         label="Tags"
-        //make its own component? action?
         //create array of tags when form is submitted
+        //make its own component? action?
         />
         <button
           type="submit"
