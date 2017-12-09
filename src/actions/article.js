@@ -22,6 +22,7 @@ export const fetchAllArticlesError =(err) => ({
 
 export const fetchAllArticles = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken
+  dispatch(fetchAllArticlesRequest())
   console.log('fetching articles')
   return fetch(`${API_BASE_URL}/articles`, {
     method: 'GET',
@@ -52,16 +53,18 @@ export const fetchArticleError =(err) => ({
   error: err
 })
 
-export const fetchArticle = (id) => dispatch => {
-  return fetch(`${API_BASE_URL}/articles/${id}`).then(res => {
-    console.log('fetching single article')
-    if(!res.ok) {
-      return Promise.reject(res.statusText);
-    }
-    return res.json({})
-  }).then(article => {
-    dispatch(fetchArticleSuccess(article));
-  });
+export const fetchArticle = (id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken
+  return fetch(`${API_BASE_URL}/articles/${id}`,{
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer: ${authToken}`
+      }
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(article => dispatch(fetchArticleSuccess(article)))
+    .catch(err => console.error(err))
 };
 
 export const POST_ARTICLE_SUCCESS = 'POST_ARTICLE_SUCCESS';
@@ -120,11 +123,13 @@ export const updateArticleError =(err) => ({
   error: err
 })
 
-export const updateArticle = article => dispatch => {
+export const updateArticle = article => (dispatch, getState) => {
+  const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/articles/:id`, {
       method: 'PUT',
       headers: {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
+          Authorization: `Bearer: ${authToken}`
       },
       body: JSON.stringify(article)
   })
@@ -160,8 +165,10 @@ export const deleteArticleError =(err) => ({
 })
 
 export const DELETE_ARTICLE = 'DELETE_ARTICLE';
-export const deleteArticle = () => dispatch => {
+export const deleteArticle = () => (dispatch, getState) => {
+  const authToken = getState.auth.authToken
   return fetch(`${API_BASE_URL}/api/articles/:id`, {
-    method: 'delete'
+    method: 'delete',
+    Authorization: `Bearer: ${authToken}`
   }).then(res => res.send(204))
 };

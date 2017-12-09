@@ -14,11 +14,11 @@ export class Article extends React.Component{
     return (
       <article>
         <h1>{this.props.title}</h1>
-        {/* <p>{props.content}</p>
+        <p>{this.props.content}</p>
         <section>
-          <span>{props.dateCreated}</span>
-          <span>{props.tag}</span>
-        </section> */}
+          <span>{this.props.dateCreated}</span>
+          <span>{this.props.tags}</span>
+        </section>
       </article>
     )
   }
@@ -27,7 +27,10 @@ export class Article extends React.Component{
 const mapStateToProps = state => {
   console.log(state)
  return { 
-   title: state.articles.data.title
+   title: state.articles.data.title,
+   content: state.articles.data.content,
+   dateCreate: state.articles.data.dateCreated,
+   tags: state.articles.data.tags
  } 
 }
 

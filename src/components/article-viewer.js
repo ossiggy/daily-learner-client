@@ -12,11 +12,14 @@ export class ArticleViewer extends Component {
 
   render() {
     let articles;
-    if(this.props.articles){
+    if(this.props.loading){
+      articles = <h2>loading</h2>
+    }
+    if(Object.keys(this.props.articles).length > 0){
       articles = this.props.articles.map((article, i) => {
       return <Link to={`/articles/${article.id}`}>{article.title}</Link>
-    });
-  }
+      })
+    };
 
     return (
       <div className="article-viewer">
@@ -29,10 +32,10 @@ export class ArticleViewer extends Component {
 }
 
 export const mapStateToProps = state => {
-  console.log(state)
   return {
     articles: state.articles.data,
-    loggedIn: true
+    loggedIn: state.auth.currentUser !== null,
+    loading: state.articles.loading
   }
 }
 
