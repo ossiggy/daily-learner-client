@@ -29,11 +29,10 @@ export class Article extends React.Component{
 }
 
 const mapStateToProps = state => {
-  console.log(state)
  return { 
    title: state.articles.data.title,
    content: state.articles.data.content,
-   dateCreate: state.articles.data.dateCreated,
+   dateCreated: state.articles.data.dateCreated,
    tags: state.articles.data.tags,
    loggedIn: state.auth.currentUser !== null
  } 

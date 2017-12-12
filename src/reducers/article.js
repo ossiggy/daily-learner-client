@@ -1,7 +1,7 @@
 import * as actions from '../actions/article';
 
 const initialState = {
-  data: {},
+  data: null,
   loading: false,
   error: null,
 };
@@ -16,6 +16,7 @@ export const articlesReducer = (state=initialState, action) => {
   if(action.type === actions.FETCH_ALL_ARTICLES_REQUEST) {
     console.log('articles requested')
     return Object.assign({}, state, {
+      data: null,
       loading: true
     })
   }
