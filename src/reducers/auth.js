@@ -1,11 +1,12 @@
 import {
   SET_AUTH_TOKEN,
-  SET_CURRENT_USER
+  SET_CURRENT_USER,
 } from '../actions';
 
 const initialState = {
   authToken: null,
-  currentUser: null
+  currentUser: null,
+  userId: null
 };
 
 export default function authReducer(state = initialState, action) {

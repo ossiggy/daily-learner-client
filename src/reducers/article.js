@@ -30,7 +30,6 @@ export const articlesReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       data: action.article,
       loading: false,
-      articlesLoaded:false
 
     })
   }

@@ -84,7 +84,8 @@ export const postArticleError =(err) => ({
   error: err
 })
 
-export const postArticle = article => dispatch => {
+export const postArticle = article => (dispatch, getState) => {
+  article._parent = getState().auth.currentUser.id
     return fetch(`${API_BASE_URL}/articles`, {
         method: 'POST',
         headers: {

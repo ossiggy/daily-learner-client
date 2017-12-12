@@ -2,17 +2,20 @@ import React, {Component} from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import {connect} from 'react-redux';
 
+import './article-form.css'
 import {postArticle} from '../actions'
 
 import ArticleInput from './article-input';
 
 export class ArticleForm extends Component {
+  
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
   }
-
+  
   render(){
     let successMessage;
+
     if(this.props.submitSucceeded) {
       successMessage =(
         <div className="lesson-learned-success">
@@ -32,6 +35,7 @@ export class ArticleForm extends Component {
 
     return (
       <form
+        className="article-form"
         onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
         {successMessage}
         {errorMessage}

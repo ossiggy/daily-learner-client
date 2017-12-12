@@ -14,7 +14,7 @@ export class ArticleViewer extends Component {
     if(!this.props.loggedIn){
       return <Redirect to='/' />
     }
-    let articles;
+    let articles = 'no articles here';
     if(this.props.loading){
       articles = <h2>loading</h2>
     }
@@ -23,6 +23,7 @@ export class ArticleViewer extends Component {
       articles = this.props.articles.map((article, i) => {
       return <Link to={`/articles/${article.id}`}>{article.title}</Link>
       })
+      console.log(this.props)
     };
 
     return (
