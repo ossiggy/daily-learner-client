@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Article from '../components/article';
-import {fetchAllArticles} from '../actions/';
+import {fetchAllArticles, deleteArticle} from '../actions/';
 
 export class ArticleViewer extends Component {
 
@@ -19,11 +19,19 @@ export class ArticleViewer extends Component {
       articles = <h2>loading</h2>
     }
   
-    if(Object.keys(this.props.articles).length > 0){
-      articles = this.props.articles.map((article, i) => {
-      return <Link to={`/articles/${article.id}`}>{article.title}</Link>
-      })
-      console.log(this.props)
+    if(this.props.articles){
+      if(!Object.keys(this.props.articles)){
+        articles = "Write down today's lesson to start tracking your daily learning!"
+      }
+      if(Object.keys(this.props.articles)){
+        articles = this.props.articles.map((article, i) => {
+        return <div className="article-link">
+                <Link to={`/articles/${article.id}`}>{article.title}</Link>
+                {/* add article updater */}
+                <button onClick={()=>this.props.dispatch(deleteArticle(article.id))}>Delete</button>
+              </div>
+        })
+      }
     };
 
     return (

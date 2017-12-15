@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {connect} from 'react-redux';
 
 import './article-form.css'
@@ -11,6 +11,8 @@ export class ArticleForm extends Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
+    .then(() => alert('Lesson Learned!'))
+    .then(() => this.props.dispatch(reset('article')))
   }
   
   render(){
@@ -39,31 +41,34 @@ export class ArticleForm extends Component {
         onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
         {successMessage}
         {errorMessage}
-        <Field
-          name="title"
+        <div className="input-fields">
+
+          <Field
+            name="title"
+            type="text"
+            component={ArticleInput}
+            label="Title"
+          />
+          <Field 
+          name="content"
+          element="textarea"
+          component={ArticleInput}
+          label="Content"
+          />
+          <Field 
+          name="tags"
           type="text"
           component={ArticleInput}
-          label="Title"
-        />
-        <Field 
-        name="content"
-        element="textarea"
-        component={ArticleInput}
-        label="Content"
-        />
-        <Field 
-        name="tags"
-        type="text"
-        component={ArticleInput}
-        label="Tag"
-        //create array of tags when form is submitted
-        //make its own component? action?
-        />
-        <button
-          type="submit"
-          disabled={this.props.pristine || this.props.submitting}>
-            Submit
-        </button>
+          label="Tag"
+          //create array of tags when form is submitted
+          //make its own component? action?
+          />
+          <button
+            type="submit"
+            disabled={this.props.pristine || this.props.submitting}>
+              Submit
+          </button>
+        </div>
       </form>
     )
   }

@@ -2,4 +2,22 @@
   width: 50%;
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
+  display: block;
+}
+
+.input-fields {
+  width:50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+[name=content] {
+  height: auto;
+  width: auto;
+  min-height: 200px;
+}
+
+label {
+  font-size: 20px;
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './article-input.css';
+
 export default class ArticleInput extends React.Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.meta.active && this.props.meta.active) {

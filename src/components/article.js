@@ -19,10 +19,8 @@ export class Article extends React.Component{
       <article>
         <h1>{this.props.title}</h1>
         <p>{this.props.content}</p>
-        <section>
-          <span>{this.props.dateCreated}</span>
-          <span>{this.props.tags}</span>
-        </section>
+        <div>{this.props.tags}</div>
+        <span>{this.props.dateCreated}</span>
       </article>
     )
   }
@@ -30,10 +28,10 @@ export class Article extends React.Component{
 
 const mapStateToProps = state => {
  return { 
-   title: state.articles.data.title,
-   content: state.articles.data.content,
-   dateCreated: state.articles.data.dateCreated,
-   tags: state.articles.data.tags,
+   title: state.singleArticle.data.title,
+   content: state.singleArticle.data.content,
+   dateCreated: state.singleArticle.data.dateCreated,
+   tags: state.singleArticle.data.tags,
    loggedIn: state.auth.currentUser !== null
  } 
 }
