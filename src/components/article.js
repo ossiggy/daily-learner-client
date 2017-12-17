@@ -19,7 +19,7 @@ export class Article extends React.Component{
       <article>
         <h1>{this.props.title}</h1>
         <p>{this.props.content}</p>
-        <div>{this.props.tags}</div>
+        <div>{this.props.category}</div>
         <span>{this.props.dateCreated}</span>
       </article>
     )
@@ -31,7 +31,7 @@ const mapStateToProps = state => {
    title: state.singleArticle.data.title,
    content: state.singleArticle.data.content,
    dateCreated: state.singleArticle.data.dateCreated,
-   tags: state.singleArticle.data.tags,
+   category: state.singleArticle.data.category,
    loggedIn: state.auth.currentUser !== null
  } 
 }

@@ -16,7 +16,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
         benefit from having a collection of all that information on tap and ready to be accessed?
         Enter: Daily Learner.  This app was designed specifically to keep track of your hard earned
         life lessons and organize them in an easily searchable database.  Just write down your lesson,
-        add a few custom tags to categorize your lessons, and viola! This is an excellent practice
+        add a category to categorize your lessons, and viola! This is an excellent practice
         that can be utilized in a variety of different ways. You can track your learning patterns and
         even write your own best seller on all that you've learned.
       </p>

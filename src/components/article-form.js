@@ -36,40 +36,45 @@ export class ArticleForm extends Component {
     }
 
     return (
-      <form
-        className="article-form"
-        onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
-        {successMessage}
-        {errorMessage}
-        <div className="input-fields">
+      <div class='row'>
+        <div class='col-6 offset-3'>
+          <form
+            className="article-form"
+            onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
+            {successMessage}
+            {errorMessage}
+            <div className="input-fields">
 
-          <Field
-            name="title"
-            type="text"
-            component={ArticleInput}
-            label="Title"
-          />
-          <Field 
-          name="content"
-          element="textarea"
-          component={ArticleInput}
-          label="Content"
-          />
-          <Field 
-          name="tags"
-          type="text"
-          component={ArticleInput}
-          label="Tag"
-          //create array of tags when form is submitted
-          //make its own component? action?
-          />
-          <button
-            type="submit"
-            disabled={this.props.pristine || this.props.submitting}>
-              Submit
-          </button>
-        </div>
-      </form>
+              <Field
+                name="title"
+                type="text"
+                component={ArticleInput}
+                value="this"
+                label="Title"
+              />
+              <Field 
+              name="content"
+              element="textarea"
+              component={ArticleInput}
+              label="Content"
+              />
+              <Field 
+              name="category"
+              type="text"
+              component={ArticleInput}
+              label="Category"
+              //create array of category when form is submitted
+              //make its own component? action?
+              />
+              <button
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting}>
+                  Submit
+              </button>
+            </div>
+          </form>
+      </div>
+    </div>
     )
   }
 }

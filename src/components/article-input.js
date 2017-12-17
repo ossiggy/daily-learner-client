@@ -24,7 +24,7 @@ export default class ArticleInput extends React.Component {
     //conditional that if label is tags, we loop through the tags
     //and push them to a tags array?
     // let tagArray =[];
-    // if(this.props.input.name==='title'){
+    // if(this.props.input.name==='tag'){
     //   input.map((i, field) => {
     //     tagArray.push(field)
     //   })
@@ -42,6 +42,7 @@ export default class ArticleInput extends React.Component {
           id={this.props.input.name}
           type={this.props.type}
           ref={input => (this.input = input)}
+          value={this.props.value}
         />
       </div>
     )

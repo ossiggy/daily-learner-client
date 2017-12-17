@@ -1,4 +1,4 @@
-.article-form {
+/* .article-form {
   width: 50%;
   margin-right: auto;
   margin-left: auto;
@@ -20,4 +20,12 @@
 
 label {
   font-size: 20px;
+} */
+
+.article-form, input, label, textarea{
+  width: 100%;
+}
+
+.article-form input, .article-form label{
+  display: block;
 }
