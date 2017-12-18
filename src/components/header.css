@@ -2,6 +2,7 @@
   background-color: #335EBD;
   color: white;
   margin: 0px auto;
+  height:150px;
   font-family: 'Bad Script', cursive;
 }
 
@@ -17,3 +18,23 @@
   text-align: center;
 }
 
+.header button {
+  float:right;
+  display:block;
+  margin-right:10px;
+}
+
+.header a{
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+
+.header a:hover{
+  background-color: white;
+  color:#335EBD;
+}
+
+.header a:link{
+  color:white
+}

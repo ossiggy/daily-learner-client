@@ -1,13 +1,13 @@
-.article-form{
+.article-updater{
   margin-left: auto;
   margin-right: auto;
 }
 
-.article-form, input, label{
+.article-updater, input, label{
   width: 75%;
 }
 
-.article-form textarea{
+.article-updater textarea{
   width: 100%;
   height: 200px;
   font-size: 22px;
@@ -15,7 +15,7 @@
   border-radius: 5px;
 }
 
-.article-form input, .article-form label{
+.article-updater input, .article-updater label{
   display: block;
   font-size: 30px;
 }

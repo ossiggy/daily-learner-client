@@ -1,3 +1,15 @@
 .home {
   text-align: center;
 }
+.toSignIn, .registration-form button{
+  margin-top:10px;
+}
+
+.form-input input, .registration-form label{
+  font-size: 20px;
+}
+
+.registration-form button{
+  height: 30px;
+  width: 90px;
+}

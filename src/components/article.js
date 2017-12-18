@@ -27,6 +27,7 @@ export class Article extends React.Component{
 }
 
 const mapStateToProps = state => {
+  console.log(state)
  return { 
    title: state.singleArticle.data.title,
    content: state.singleArticle.data.content,

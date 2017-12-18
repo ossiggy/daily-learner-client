@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Article from '../components/article';
 import {fetchAllArticles, deleteArticle} from '../actions/';
+import './article-viewer.css';
 
 export class ArticleViewer extends Component {
 
@@ -26,9 +27,13 @@ export class ArticleViewer extends Component {
       if(Object.keys(this.props.articles)){
         articles = this.props.articles.map((article, i) => {
         return <div className="article-link">
-                <Link to={`/articles/${article.id}`}>{article.title}</Link>
-                {/* add article updater */}
-                <button onClick={()=>this.props.dispatch(deleteArticle(article.id))}>Delete</button>
+                <Link to={`/articles/${article.id}`}>
+                <button className='article-title col-3' type='submit'>{article.title}</button>
+                </Link>
+                <Link to={`/update/${article.id}`}>
+                <button className='update' type='submit'>Update</button>
+                </Link>
+                <button className='delete' onClick={()=>this.props.dispatch(deleteArticle(article.id))}>Delete</button>
               </div>
         })
       }
@@ -36,9 +41,8 @@ export class ArticleViewer extends Component {
 
     return (
       <div className="article-viewer">
-        <div className="">
+        <h2>Previous Lessons</h2>
           {articles}
-        </div>
       </div>
     );
   }

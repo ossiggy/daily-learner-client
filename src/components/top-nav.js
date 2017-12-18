@@ -5,18 +5,21 @@ import {NavLink} from 'react-router-dom';
 export function TopNav(props) {
   if(props.loggedIn){
     return (
-      <nav>
-      <NavLink exact to="/dashboard" activeClassName="active">
+      <nav className='nav'>
+        <NavLink exact to="/dashboard" activeClassName="active" className="col-1">
           Home
         </NavLink>
-        <NavLink to="/articles/" activeClassName="active">
+        <NavLink exact to="/articleform" activeClassName="active" className="col-2">
+          New Lesson
+        </NavLink>
+        <NavLink to="/articles/" activeClassName="active" className="col-2">
           Previous Lessons
         </NavLink>
       </nav> 
     )
   }
   return (
-    <nav>
+    <nav className='nav'>
       <NavLink exact to="/dashboard" activeClassName="active">
         Home
       </NavLink>

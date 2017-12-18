@@ -13,7 +13,7 @@ export function RegistrationPage(props) {
         <div className="home">
             <h2>Register and start tracking your lessons!</h2>
             <RegistrationForm />
-            <Link to="/">Head back and sign in</Link>
+            <Link className="toSignIn col-4 offset-4" to="/">Head back and sign in</Link>
         </div>
     );
 }

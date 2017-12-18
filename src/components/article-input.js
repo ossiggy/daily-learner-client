@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './article-input.css';
 
 export default class ArticleInput extends React.Component {
   componentDidUpdate(prevProps) {
@@ -21,8 +20,8 @@ export default class ArticleInput extends React.Component {
       warning = <div className="article-form-warning">{this.props.meta.warning}</div>
     }
 
-    //conditional that if label is tags, we loop through the tags
-    //and push them to a tags array?
+    //conditional that if label is category, we loop through the category
+    //and push them to a category array?
     // let tagArray =[];
     // if(this.props.input.name==='tag'){
     //   input.map((i, field) => {

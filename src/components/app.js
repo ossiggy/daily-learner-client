@@ -6,6 +6,8 @@ import Dashboard from './dashboard';
 import Header from './header';
 import ArticleViewer from './article-viewer';
 import Article from './article';
+import ArticleForm from './article-form';
+import ArticleUpdater from './article-updater';
 import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
@@ -52,8 +54,10 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path='/articleform' component={ArticleForm} />
         <Route exact path="/articles" component={ArticleViewer} />
         <Route exact path="/articles/:id" component={Article} />
+        <Route exact path="/update/:id" component={ArticleUpdater} />
       </div>
     )
   }
