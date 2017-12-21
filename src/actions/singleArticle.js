@@ -142,9 +142,3 @@ export const deleteArticle = (id) => (dispatch, getState) => {
     Authorization: `Bearer: ${authToken}`
   }).then(() => dispatch(fetchAllArticles()))
 };
-
-export const LOAD = 'LOAD';
-export const load = data => {
-  type: LOAD
-  data
-}
