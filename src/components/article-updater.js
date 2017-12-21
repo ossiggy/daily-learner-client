@@ -20,6 +20,10 @@ export class ArticleUpdater extends React.Component{
   }
 
   render(){
+    if(this.props.initialValues){
+    console.log(this.props.initialValues)
+    }
+
     let successMessage;
     
         if(this.props.submitSucceeded) {
@@ -48,24 +52,29 @@ export class ArticleUpdater extends React.Component{
             {successMessage}
             {errorMessage}
             <div className="input-fields">
-
+            <label htmlFor="title">Title</label>
               <Field
+                id="title"
                 name="title"
                 type="text"
-                component={ArticleInput}
+                component="input"
                 value="this"
                 label="Title"
               />
+            <label htmlFor="content">Body</label>
               <Field 
+              id="content"
               name="content"
               element="textarea"
-              component={ArticleInput}
+              component="textarea"
               label="Content"
               />
+            <label htmlFor="category">Category</label>
               <Field 
+              id="category"
               name="category"
               type="text"
-              component={ArticleInput}
+              component="input"
               label="Category"
               //create array of category when form is submitted
               //make its own component? action?
@@ -83,18 +92,17 @@ export class ArticleUpdater extends React.Component{
   }
 }
 
+ArticleUpdater = reduxForm({
+  form: 'ArticleUpdater',
+  onSubmitFail: (errors, dispatch) =>
+  dispatch(focus('ArticleUpdater', Object.keys(errors)[0]))
+})(ArticleUpdater);
+
 const mapStateToProps = state => {
-  console.log(state.singleArticle.data)
   return{
-  initialData: state.singleArticle.data
+  initialValues: state.singleArticle.data
   }
 }
+export default ArticleUpdater = connect(mapStateToProps)(ArticleUpdater);
 
-ArticleUpdater = connect(mapStateToProps, {load: loadArticle})(ArticleUpdater);
-
-export default reduxForm({
-  form: 'article-updater',
-  onSubmitFail: (errors, dispatch) =>
-      dispatch(focus('article-updater', Object.keys(errors)[0]))
-})(ArticleUpdater);
 

@@ -93,6 +93,7 @@ export const updateArticleError =(err) => ({
 })
 
 export const updateArticle = article => (dispatch, getState) => {
+  console.log(JSON.stringify(article))
   const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/articles/${article.id}`, {
       method: 'PUT',

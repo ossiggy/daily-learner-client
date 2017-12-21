@@ -38,7 +38,7 @@ export default class ArticleInput extends React.Component {
         </label>
         <Element
           {...this.props.input}
-          id={this.props.input.name}
+          name={this.props.input.name}
           type={this.props.type}
           ref={input => (this.input = input)}
           value={this.props.value}
