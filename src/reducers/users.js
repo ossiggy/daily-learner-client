@@ -3,7 +3,7 @@ import * as actions from '../actions/users';
 const initialState = {
   data: null,
   loading: false,
-  error: null
+  error: null,
 };
 
 export const userReducer = (state=initialState, action) => {

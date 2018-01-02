@@ -43,7 +43,7 @@ export const registerUserRequest = () => ({
 });
 
 export const REGISTER_USER_ERROR = 'REGISTER_USER_ERROR';
-export const registerUserError =(err) => ({
+export const registerUserError = (err) => ({
   type: REGISTER_USER_ERROR,
   error: err
 })

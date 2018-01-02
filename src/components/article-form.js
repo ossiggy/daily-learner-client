@@ -12,8 +12,11 @@ export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
-    .then(() => alert('Lesson Learned!'))
-    .then(() => this.props.dispatch(reset('article-form')))
+    // .then(() => alert('Lesson Learned!'))
+    .then(() => {
+      this.props.dispatch(reset('article-form'))
+      console.log('made it')
+    })
   }
   
   render(){
@@ -94,5 +97,5 @@ ArticleForm = connect(mapStateToProps)(ArticleForm)
 export default reduxForm({
   form: 'article-form',
   onSubmitFail: (errors, dispatch) =>
-      dispatch(focus('article', Object.keys(errors)[0]))
+      dispatch(focus('article-form', Object.keys(errors)[0]))
 })(ArticleForm);

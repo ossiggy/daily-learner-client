@@ -3,7 +3,7 @@ import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {connect} from 'react-redux';
 
 import ArticleInput from './article-input';
-import {fetchArticle, updateArticle, load as loadArticle} from '../actions';
+import {fetchArticle, updateArticle, load as loadArticle, articleFormReset} from '../actions';
 
 import './article-updater.css'
 
@@ -20,7 +20,7 @@ export class ArticleUpdater extends React.Component{
   }
 
   render(){
-    if(this.props.initialValues){
+    if(this.props.initialValues.id===this.props.match.params.id){
     console.log(this.props.initialValues)
     }
 

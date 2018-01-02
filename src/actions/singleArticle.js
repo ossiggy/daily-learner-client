@@ -26,7 +26,7 @@ export const fetchArticle = (id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/articles/${id}`,{
     method: 'GET',
     headers: {
-      Authorization: `Bearer: ${authToken}`
+      Authorization: `Bearer ${authToken}`
       }
     })
     .then(res => normalizeResponseErrors(res))

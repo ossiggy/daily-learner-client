@@ -1,11 +1,16 @@
 .article-link .update{
   background-color: #335EBD;
   border-color: #335EBD;
+  width: 100px;
+  height: 50px;
+  font-size: 25px;
 }
 
 .article-link .delete{
   background-color: red;
   border-color: red;
+  height: 50px;
+  font-size: 25px;
 }
 
 .article-viewer{
@@ -15,4 +20,20 @@
 
 .article-link{
   margin-top: 10px;
+}
+
+.article-viewer h2{
+  text-align: center;
+  font-size: 50px;
+  color: #335EBD;
+}
+
+.article-div{
+  text-align: center;
+}
+
+.article-title{
+  font-size: 25px;
+  width: 200px;
+  height: 50px
 }

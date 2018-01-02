@@ -12,5 +12,4 @@ if(authToken) {
   store.dispatch(setAuthToken(token));
 }
 
-
 export default store;

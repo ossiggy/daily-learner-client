@@ -26,7 +26,7 @@ export class ArticleViewer extends Component {
       }
       if(Object.keys(this.props.articles)){
         articles = this.props.articles.map((article, i) => {
-        return <div className="article-link">
+        return <div key = {i} className="article-link">
                 <Link to={`/articles/${article.id}`}>
                 <button className='article-title col-3' type='submit'>{article.title}</button>
                 </Link>
@@ -41,8 +41,10 @@ export class ArticleViewer extends Component {
 
     return (
       <div className="article-viewer">
-        <h2>Previous Lessons</h2>
-          {articles}
+        <h2 className="col-6 offset-3">Previous Lessons</h2>
+          <div className="col-6 offset-3 article-div">
+            {articles}
+          </div>
       </div>
     );
   }

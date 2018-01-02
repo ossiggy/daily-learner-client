@@ -1,6 +1,7 @@
 import {
   SET_AUTH_TOKEN,
   SET_CURRENT_USER,
+  LOGOUT
 } from '../actions';
 
 const initialState = {
@@ -18,6 +19,12 @@ export default function authReducer(state = initialState, action) {
       return Object.assign({}, state, {
           currentUser: action.currentUser
       });
+  } else if (action.type === LOGOUT) {
+    console.log('loggin out')
+    return Object.assign({}, state, {
+      currentUser: null,
+      authToken: null
+    })
   }
   return state;
 }

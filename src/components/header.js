@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setCurrentUser, setAuthToken} from '../actions';
+import {setCurrentUser, setAuthToken, logout} from '../actions';
 import {clearAuthToken} from '../local-storage';
 import './header.css';
 import TopNav from './top-nav';
@@ -8,9 +8,12 @@ import TopNav from './top-nav';
 export class Header extends React.Component {
 
   logOut() {
-    this.props.dispatch(setCurrentUser(null));
-    this.props.dispatch(setAuthToken(null));
+    console.log('top of file')
+    // this.props.dispatch(setCurrentUser(null));
+    // this.props.dispatch(setAuthToken(null));
+    this.props.dispatch(logout());
     clearAuthToken();
+    console.log(this.props.state);
 }
 
   render(){
@@ -34,7 +37,10 @@ export class Header extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    authToken: state.auth.authToken,
+    currentUser: state.auth.currentUser,
+    state: state
   };
 }
 
