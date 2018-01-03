@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import ArticleForm from './article-form';
-import {fetchAllArticles} from '../actions/';
 
 export function Dashboard(props) {
   if(!props.loggedIn){
@@ -10,7 +8,7 @@ export function Dashboard(props) {
   }
 
  return (
-    <div className="dashboard">
+    <div className="dashboard col-6 offset-4">
       <h1>Where should we begin?</h1>
       <Link to='/articleform'>
         <button type='submit'>New Lesson</button>

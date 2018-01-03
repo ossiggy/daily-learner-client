@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
-import Article from '../components/article';
 import {fetchAllArticles, deleteArticle} from '../actions/';
 import './article-viewer.css';
 

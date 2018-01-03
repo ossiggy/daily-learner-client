@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset} from 'redux-form';
 import {connect} from 'react-redux';
 
 import './article-form.css'
@@ -70,11 +70,14 @@ export class ArticleForm extends React.Component {
               <Field 
               name="category"
               type="text"
-              component={ArticleInput}
-              label="Category"
-              //create array of category when form is submitted
-              //make its own component? action?
-              />
+              component="select"
+              label="Category">
+              <option value="work">Work</option>
+              <option value="school">School</option>
+              <option value="social">Social</option>
+              <option value="personal">Personal</option>
+              <option value="spiritual">Spiritual</option>
+              </Field>
               <button
                 type="submit"
                 disabled={this.props.pristine || this.props.submitting}>

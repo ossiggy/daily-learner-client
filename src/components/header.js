@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setCurrentUser, setAuthToken, logout} from '../actions';
+import {logout} from '../actions';
 import {clearAuthToken} from '../local-storage';
 import './header.css';
 import TopNav from './top-nav';
@@ -9,8 +9,6 @@ export class Header extends React.Component {
 
   logOut() {
     console.log('top of file')
-    // this.props.dispatch(setCurrentUser(null));
-    // this.props.dispatch(setAuthToken(null));
     this.props.dispatch(logout());
     clearAuthToken();
     console.log(this.props.state);
