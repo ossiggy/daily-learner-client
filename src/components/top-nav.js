@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
+import {logout} from '../actions'
 
 export function TopNav(props) {
+  let logOutButton
   if(props.loggedIn){
     return (
       <nav className='nav'>
@@ -12,9 +14,10 @@ export function TopNav(props) {
         <NavLink exact to="/articleform" activeClassName="active" className="col-2">
           New Lesson
         </NavLink>
-        <NavLink to="/articles/" activeClassName="active" className="col-2">
+        <NavLink to="/articles/" activeClassName="active" className="col-3">
           Previous Lessons
         </NavLink>
+        <button className="logout-button col-1" onClick={()=>props.dispatch(logout())}>Log out</button>
       </nav> 
     )
   }

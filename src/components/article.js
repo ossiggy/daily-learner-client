@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {fetchArticle} from '../actions';
+import './article.css'
 
 export class Article extends React.Component{
 
@@ -16,10 +17,10 @@ export class Article extends React.Component{
     }
   
     return (
-      <article>
+      <article className="col-6 offset-4">
         <h1>{this.props.title}</h1>
         <p>{this.props.content}</p>
-        <div>{this.props.category}</div>
+        <div>Category: {this.props.category}</div>
         <span>{this.props.dateCreated}</span>
       </article>
     )
@@ -27,7 +28,6 @@ export class Article extends React.Component{
 }
 
 const mapStateToProps = state => {
-  console.log(state)
  return { 
    title: state.singleArticle.data.title,
    content: state.singleArticle.data.content,

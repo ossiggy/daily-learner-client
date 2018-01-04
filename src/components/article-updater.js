@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
 import {fetchArticle, updateArticle} from '../actions';
@@ -8,13 +8,15 @@ import './article-updater.css'
 
 export class ArticleUpdater extends React.Component{
 
+  //check for logged in and reset
+
   componentDidMount(){
+    console.log('mounted!')
     this.props.dispatch(fetchArticle(this.props.match.params.id))
   }
 
   onSubmit(article) {
     this.props.dispatch(updateArticle(article))
-    .then(() => alert('Lesson Learned!'))
     .then(() => this.props.dispatch(reset('article')))
   }
 
@@ -74,11 +76,11 @@ export class ArticleUpdater extends React.Component{
               type="text"
               component="select"
               label="Category">
-              <option value="work">Work</option>
-              <option value="school">School</option>
-              <option value="social">Social</option>
-              <option value="personal">Personal</option>
-              <option value="spiritual">Spiritual</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="social">Social</option>
+                <option value="personal">Personal</option>
+                <option value="spiritual">Spiritual</option>
               </Field>
               <button
                 type="submit"
@@ -95,13 +97,17 @@ export class ArticleUpdater extends React.Component{
 
 ArticleUpdater = reduxForm({
   form: 'ArticleUpdater',
+  enableReinitialize: true,
   onSubmitFail: (errors, dispatch) =>
   dispatch(focus('ArticleUpdater', Object.keys(errors)[0]))
 })(ArticleUpdater);
 
+const selector = formValueSelector('ArticleUpdater')
+
 const mapStateToProps = state => {
   return{
-  initialValues: state.singleArticle.data
+  initialValues: state.singleArticle.data,
+  catgory: selector(state, 'category')
   }
 }
 export default ArticleUpdater = connect(mapStateToProps)(ArticleUpdater);

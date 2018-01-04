@@ -22,6 +22,7 @@ export const fetchArticleError =(err) => ({
 })
 
 export const fetchArticle = (id) => (dispatch, getState) => {
+  console.log('fetch article dispatched with ' + id)
   const authToken = getState().auth.authToken
   return fetch(`${API_BASE_URL}/articles/${id}`,{
     method: 'GET',

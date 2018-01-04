@@ -13,16 +13,12 @@
   font-size: 25px;
 }
 
-.article-viewer{
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
 .article-link{
   margin-top: 10px;
 }
 
 .article-viewer h2{
+  padding-top: 50px;
   text-align: center;
   font-size: 50px;
   color: #335EBD;
@@ -37,3 +33,4 @@
   width: 200px;
   height: 50px
 }
+

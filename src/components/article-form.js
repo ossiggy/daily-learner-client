@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import {reduxForm, Field, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
 import './article-form.css'
@@ -13,10 +13,10 @@ export class ArticleForm extends React.Component {
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
     // .then(() => alert('Lesson Learned!'))
-    .then(() => {
-      this.props.dispatch(reset('article-form'))
-      console.log('made it')
-    })
+    // .then(() => {
+    //   this.props.dispatch(reset('article-form'))
+    //   console.log('made it')
+    // })
   }
   
   render(){
@@ -91,14 +91,17 @@ export class ArticleForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
-})
+const selector = formValueSelector('article-form')
 
-ArticleForm = connect(mapStateToProps)(ArticleForm)
-
-export default reduxForm({
+ArticleForm = reduxForm({
   form: 'article-form',
   onSubmitFail: (errors, dispatch) =>
       dispatch(focus('article-form', Object.keys(errors)[0]))
 })(ArticleForm);
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null,
+  category: selector(state, 'category')
+})
+
+export default ArticleForm = connect(mapStateToProps)(ArticleForm)

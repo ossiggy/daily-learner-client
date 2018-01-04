@@ -1,0 +1,15 @@
+.dashboard {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.dashboard button {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 180px;
+}
+
+.dashboard ul{
+  list-style: none;
+  text-align: center;
+}

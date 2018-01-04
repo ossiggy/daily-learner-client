@@ -1,27 +1,64 @@
 .header {
   background-color: #335EBD;
+  width: 100%;
   color: white;
-  margin: 0px auto;
-  height:150px;
+  position: fixed;
   font-family: 'Bad Script', cursive;
 }
 
-.main-title, .subtitle {
-  margin: 0px;
-  padding: none;
-}
+@media screen and (min-width: 805px){
 
-.info-section{
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+  .main-title, .subtitle {
+    margin: 0px;
+    padding-left: 10px;
+    display: inline;
+  }
 
-.header button {
-  float:right;
-  display:block;
-  margin-right:10px;
+  .main-title{
+    font-size: 28px;
+  }
+
+  .subtitle{
+    font-size: 16px;
+  }
+
+  .info-section{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top:110px;
+  }
+
+  .head-box{
+    width: 50%;
+    display: inline-block;
+  }
+
+  .nav{
+    width: 50%;
+    display: inline-block;
+    padding-right: 10px;
+  }
+
+  .logout-button{
+    width: 80px;
+    float: right;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  nav.nav{
+    display: inline-block;
+  }
+
+  .header a{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
 .header a{
@@ -37,4 +74,8 @@
 
 .header a:link{
   color:white
+}
+
+.header button{
+  float: right;
 }
