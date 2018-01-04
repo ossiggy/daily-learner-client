@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
+import {reduxForm, Field, focus, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
 import {fetchArticle, updateArticle, reset as formReset} from '../actions';
@@ -21,6 +21,7 @@ export class ArticleUpdater extends React.Component{
 
   onSubmit(article) {
     this.props.dispatch(updateArticle(article))
+    .then(() => <Redirect to='/articles' />)
   }
 
   render(){

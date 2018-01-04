@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {clearAuthToken} from '../local-storage';
 import './header.css';
 import TopNav from './top-nav';
 

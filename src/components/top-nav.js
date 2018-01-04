@@ -5,7 +5,6 @@ import {logout} from '../actions'
 
 export function TopNav(props) {
   if(props.loggedIn){
-    console.log(props.currentUser)
     return (
       <nav className='nav'>
         <NavLink exact to="/dashboard" activeClassName="active" className="col-3">

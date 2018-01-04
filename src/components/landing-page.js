@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import LoginForm from './login-form';
 
 export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
