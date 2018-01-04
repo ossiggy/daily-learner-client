@@ -12,11 +12,6 @@ export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
-    // .then(() => alert('Lesson Learned!'))
-    // .then(() => {
-    //   this.props.dispatch(reset('article-form'))
-    //   console.log('made it')
-    // })
   }
   
   render(){
@@ -57,14 +52,14 @@ export class ArticleForm extends React.Component {
               <Field
                 name="title"
                 type="text"
-                component={ArticleInput}
+                component="input"
                 value="this"
                 label="Title"
               />
               <Field 
               name="content"
               element="textarea"
-              component={ArticleInput}
+              component="textarea"
               label="Content"
               />
               <Field 
@@ -91,12 +86,17 @@ export class ArticleForm extends React.Component {
   }
 }
 
-const selector = formValueSelector('article-form')
+const selector = formValueSelector('ArticleForm')
+
+const afterSubmit = (results, dispatch) => {
+  dispatch(reset('ArticleForm'))
+}
 
 ArticleForm = reduxForm({
-  form: 'article-form',
+  form: 'ArticleForm',
+  onSubmitSuccess: afterSubmit,
   onSubmitFail: (errors, dispatch) =>
-      dispatch(focus('article-form', Object.keys(errors)[0]))
+      dispatch(focus('ArticleForm', Object.keys(errors)[0]))
 })(ArticleForm);
 
 const mapStateToProps = state => ({

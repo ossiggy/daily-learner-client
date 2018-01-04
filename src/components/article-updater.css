@@ -1,6 +1,7 @@
 .article-updater{
   margin-left: auto;
   margin-right: auto;
+  padding-top: 100px;
 }
 
 .article-updater, input, label{

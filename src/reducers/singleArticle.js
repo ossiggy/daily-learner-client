@@ -78,6 +78,11 @@ export const singleArticleReducer = (state=initialState, action) => {
       loading: false
     })
   }
+  if(action.type === actions.RESET){
+    return Object.assign({}, state, {
+      data: {}
+    })
+  }
   return state;
 }
 

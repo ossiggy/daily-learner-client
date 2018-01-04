@@ -1,28 +1,31 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
-import {fetchArticle, updateArticle} from '../actions';
+import {fetchArticle, updateArticle, reset as formReset} from '../actions';
 
 import './article-updater.css'
 
 export class ArticleUpdater extends React.Component{
 
-  //check for logged in and reset
-
   componentDidMount(){
-    console.log('mounted!')
-    this.props.dispatch(fetchArticle(this.props.match.params.id))
+    if(this.props.match.params.id){
+      this.props.dispatch(fetchArticle(this.props.match.params.id))
+    }
+  }
+
+  componentWillUnmount(){
+    this.props.dispatch(formReset())
   }
 
   onSubmit(article) {
     this.props.dispatch(updateArticle(article))
-    .then(() => this.props.dispatch(reset('article')))
   }
 
   render(){
-    if(this.props.initialValues.id===this.props.match.params.id){
-    console.log(this.props.initialValues)
+    if(!this.props.loggedIn){
+      return <Redirect to='/' />
     }
 
     let successMessage;
@@ -107,7 +110,8 @@ const selector = formValueSelector('ArticleUpdater')
 const mapStateToProps = state => {
   return{
   initialValues: state.singleArticle.data,
-  catgory: selector(state, 'category')
+  catgory: selector(state, 'category'),
+  loggedIn: state.auth.currentUser !== null
   }
 }
 export default ArticleUpdater = connect(mapStateToProps)(ArticleUpdater);

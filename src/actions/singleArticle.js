@@ -130,7 +130,7 @@ export const deleteArticleRequest = () => ({
 });
 
 export const DELETE_ARTICLE_ERROR = 'DELETE_ARTICLE_ERROR';
-export const deleteArticleError =(err) => ({
+export const deleteArticleError = (err) => ({
   type: DELETE_ARTICLE_ERROR,
   error: err
 })
@@ -143,3 +143,8 @@ export const deleteArticle = (id) => (dispatch, getState) => {
     Authorization: `Bearer: ${authToken}`
   }).then(() => dispatch(fetchAllArticles()))
 };
+
+export const RESET = 'RESET';
+export const reset = () => ({
+  type: RESET
+})
