@@ -10,10 +10,10 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="home">
+        <div className="home col-6 offset-3">
             <h2>Register and start tracking your lessons!</h2>
             <RegistrationForm />
-            <Link className="toSignIn col-4 offset-4" to="/">Head back and sign in</Link>
+            <Link className="toSignIn" to="/">Head back and sign in</Link>
         </div>
     );
 }

@@ -17,7 +17,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="registration-form col-4 offset-4"
+                className="registration-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>

@@ -1,6 +1,11 @@
 .home {
   text-align: center;
 }
+
+.registration-form{
+ margin-top: 50px;
+}
+
 .toSignIn, .registration-form button{
   margin-top:10px;
 }

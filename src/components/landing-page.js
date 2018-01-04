@@ -4,8 +4,11 @@ import {Link, Redirect} from 'react-router-dom';
 import LoginForm from './login-form';
 
 export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
-  if(props.loggedIn){
-    return <Redirect to="/dashboard" />
+  let registerSection
+  let loginForm
+  if(!props.loggedIn){
+    registerSection = <Link to='/register'>Sign Up And Start Tracking</Link>
+    loginForm = <LoginForm />
   }
   
   return (
@@ -19,8 +22,8 @@ export function LandingPage(props){ //first page you see, decide whether you wan
         that can be utilized in a variety of different ways. You can track your learning patterns and
         even write your own best seller on all that you've learned.
       </p>
-      <Link to='/register'>Sign Up And Start Tracking</Link>
-      <LoginForm />
+      {registerSection}
+      {loginForm}
     </section>
   )
 }
