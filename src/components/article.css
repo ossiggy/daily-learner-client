@@ -3,17 +3,19 @@ article{
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   text-align: center;
+  color: white;
 }
 
 article h1{
-  background-color: #335EBD;
+  background-color: #02174E;
   color: white;
   border-radius: 50px;
 }
 
 article p{
   border-radius: 50px;
-  border: 5px solid #335EBD;
+  border: 5px solid #02174E;
+  color: white;
 }
 
 article div{

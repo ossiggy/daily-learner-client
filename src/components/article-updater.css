@@ -28,8 +28,13 @@ select{
   background-color: #00164E;
   color: white;
 }
-button{
-  height: 30px;
+.article-updater button{
+  height: 40px;
   width: 90px;
   font-size: 20px;
+  float: right;
+}
+
+.article-updater label, .lesson-learned-success{
+  color: white;
 }

@@ -10,7 +10,7 @@ export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
-      .then(() => <Redirect to="/dashboard" />);
+      .then(() => alert('Lesson learned!'));
   }
   
   render(){
@@ -25,13 +25,6 @@ export class ArticleForm extends React.Component {
     }
 
     let errorMessage;
-    if(this.props.error){
-      errorMessage =(
-        <div className="lesson-learned-error">
-          {this.props.error}
-        </div>
-      );
-    }
 
     return (
       <div className='row'>
@@ -64,7 +57,6 @@ export class ArticleForm extends React.Component {
                 type="text"
                 component="select"
                 label="Category">
-                <option value="select one"></option>
                 <option value="work">Work</option>
                 <option value="school">School</option>
                 <option value="social">Social</option>
@@ -99,7 +91,8 @@ const selector = formValueSelector('ArticleForm');
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
-  category: selector(state, 'category')
+  category: selector(state, 'category'),
+  initialValues: {'category': 'work'}
 });
 
 export default connect(mapStateToProps)(ArticleForm);
