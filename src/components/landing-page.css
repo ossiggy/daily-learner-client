@@ -1,4 +1,102 @@
-.site-info{
+.landing-page {
+  background-color: #335EBD;
+  height: 100%;
+}
+
+.info-section-1{
+  width: 100%;
+  background-color: #02174E;
+  padding: 0px;
+  padding-left:60px;
+  margin-top: 100px;
+  border-radius: 150px;
+  box-shadow: 10px 8px 16px 2px #262626;
+}
+
+.site-info-1{
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
+  width: 50%;
+  margin-right: auto;
+  color: white;
+  text-align: left;
+  display: inline-block;
+  margin-top: 35px;
+}
+
+.info-section-1 img{
+  height:250px;
+  float: right;
+  border-radius: 150px;
+  /* border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px; */
+}
+
+.info-section-2{
+  width: 100%;
+  background-color: #02174E;
+  padding: 0px;
+  padding-right:60px;
+  margin-top: 50px;
+  border-radius: 150px;
+  box-shadow: 10px 8px 16px 2px #262626;
+}
+
+.site-info-2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  width: 50%;
+  margin-left: auto;
+  color: white;
+  text-align: left;
+  float: right;
+
+}
+
+.info-section-2 img{
+  height:250px;
+  float: left;
+  border-radius: 150px;
+  margin-left:150px;
+  margin-top: 35px;
+}
+
+.author{
+  font-size: 16px;
+  color:white;
+  text-align: center;
+  padding-top:25px;
+  padding-bottom:25px;
+  font-family: 'Bad Script', cursive;
+}
+
+.register-login{
+  text-align:center;
+  margin-top: 30px;
+
+}
+
+.register-login a{
+  font-size: 20px;
+  color: #02174E;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: white;
+}
+
+.login-form{
+  background-color: #02174E;
+  border-radius: 25px;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+}
+
+.login-form h3, .login-form label{
+  color: white;
+  font-style: normal;
+}
+
+.login-form button{
+  margin-top: 10px;
 }

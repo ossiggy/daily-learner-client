@@ -1,6 +1,7 @@
 .dashboard {
   padding-top: 100px;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .dashboard button {
@@ -14,4 +15,38 @@
 .dashboard ul{
   list-style: none;
   text-align: center;
+  background: #00164E;
+  border-radius: 25px;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.dashboard ul li{
+  border-radius: 50px;
+  color: #00164E;
+  background-color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dashboard h1{
+  font-size: 30px;
+  color: white;
+}
+
+.link-container{
+  border-radius: 25px;
+  background-color: #00164E;
+  box-shadow: 10px 8px 16px 2px #262626;
+  padding-bottom: 10px;
+}
+
+.dashboard-container{
+  background-color: #335EBD;
+  height: 100vh;
 }

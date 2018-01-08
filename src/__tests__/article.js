@@ -7,7 +7,13 @@ import {Article} from '../components/article';
 
 describe('<Article />', () => {
   it('Renders without crashing', () => {
+    const props = {
+      params :{
+        id: 123456
+      }
+    };
     const dispatch = jest.fn();
-    shallow(<Article params={{'id': '1234567'}} dispatch={dispatch} />);
+    shallow(<Article props={props} dispatch={dispatch} />);
+    expect(dispatch).toHaveBeenCalledWith(fetchArticle);
   });
 });

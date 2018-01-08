@@ -1,6 +1,6 @@
 .article-link .update{
-  background-color: #335EBD;
-  border-color: #335EBD;
+  background-color: #64BE64;
+  border-color: #41A941;
   width: 100px;
   height: 50px;
   font-size: 25px;
@@ -25,7 +25,8 @@
   font-size: 50px;
   color: white;
   border-radius: 50px;
-  background-color: #335EBD;
+  background-color: #02174E;
+  box-shadow: 10px 8px 16px 2px #262626;
 }
 
 .article-div{
@@ -38,9 +39,12 @@
   height: 50px;
   overflow: hidden;
   border-radius: 50px;
+  background-color: #02174E;
+  border-color: #02174E;
 }
 
 .article-viewer{
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
+  height: 100%;
 }

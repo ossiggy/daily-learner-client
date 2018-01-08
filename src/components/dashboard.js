@@ -40,21 +40,25 @@ export class Dashboard extends React.Component {
       });
     }
     return (
-      <div className="dashboard col-6 offset-3">
-        <h1>Where should we begin?</h1>
-        <Link to='/articleform'>
-          <button type='submit'>New Lesson</button>
-        </Link>
-        <Link to='/articles'>
-          <button type='submit'>Previous Lessons</button>
-        </Link>
-        <ul className='stats col-6 offset-3'>Breakdown of lessons so far
-          <li className='school'>School: {school}</li>
-          <li className='work'>Work: {work}</li>
-          <li className='spiritual'>Spiritual: {spiritual}</li>
-          <li className='social'>Social: {social}</li>
-          <li className='personal'>Personal: {personal}</li>
-        </ul>
+      <div className="dashboard-container col-12">
+        <div className="dashboard col-6 offset-3">
+          <div className="link-container">
+            <h1>Where should we begin?</h1>
+            <Link to='/articleform'>
+              <button type='submit'>New Lesson</button>
+            </Link>
+            <Link to='/articles'>
+              <button type='submit'>Previous Lessons</button>
+            </Link>
+          </div>
+          <ul className='stats col-6'>Breakdown of lessons:
+            <li className='school'>School: {school}</li>
+            <li className='work'>Work: {work}</li>
+            <li className='spiritual'>Spiritual: {spiritual}</li>
+            <li className='social'>Social: {social}</li>
+            <li className='personal'>Personal: {personal}</li>
+          </ul>
+        </div>
       </div>
     );
   }
