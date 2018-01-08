@@ -107,4 +107,11 @@
 
 .login-form button{
   margin-top: 10px;
+  height: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.login-title{
+  margin-top: 10px;
 }
