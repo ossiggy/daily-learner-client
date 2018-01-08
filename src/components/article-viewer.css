@@ -4,6 +4,7 @@
   width: 100px;
   height: 50px;
   font-size: 25px;
+  border-radius: 50px;
 }
 
 .article-link .delete{
@@ -11,6 +12,7 @@
   border-color: red;
   height: 50px;
   font-size: 25px;
+  border-radius: 50px;
 }
 
 .article-link{
@@ -18,10 +20,12 @@
 }
 
 .article-viewer h2{
-  padding-top: 50px;
+  margin-top: 100px;
   text-align: center;
   font-size: 50px;
-  color: #335EBD;
+  color: white;
+  border-radius: 50px;
+  background-color: #335EBD;
 }
 
 .article-div{
@@ -33,5 +37,10 @@
   width: 300px;
   height: 50px;
   overflow: hidden;
+  border-radius: 50px;
 }
 
+.article-viewer{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+}

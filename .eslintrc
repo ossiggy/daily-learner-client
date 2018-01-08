@@ -1,0 +1,42 @@
+{
+  /** 
+    * ESLint: http://eslint.org/docs/user-guide/configuring
+
+    */
+
+  "plugins": ["react","jsx-a11y"],
+  // "env:" supplies predefined global variables
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  // our configuration extends the recommended base configuration
+  // as well as the recommended base config for react
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  // define the type of file `script` or `module` for ES6 Modules
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 6
+  },
+  //ESLint rules: Severity Levels: off = 0 | warn = 1 | error = 2
+  "rules": {
+    "strict": ["error", "safe"], //prefer `'use-strict';` pragma
+    "eqeqeq": "error", //prefer strict equality `===`
+    "no-console": "warn", //allows but warn about console like `console.log()`
+    "no-class-assign": 0, //turns off no class assign
+    "no-unused-vars": "warn", //warns about unused variables
+    "no-eval": "error", //disallows `eval()` usage
+    "indent": [2, 2, {"SwitchCase": 1}], //enforce 2 space indents (not tabs)
+    "quotes": ["error", "single"], //prefer single quotes over double quotes
+    "semi": ["error", "always"], //enforce semi-colon usage
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0
+  } 
+}

@@ -3,29 +3,25 @@ import {Redirect} from 'react-router-dom';
 import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
-import './article-form.css'
-import {postArticle} from '../actions'
+import './article-form.css';
+import {postArticle} from '../actions';
 
 export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
+      .then(() => <Redirect to="/dashboard" />);
   }
   
   render(){
-
     if(!this.props.loggedIn){
-      return <Redirect to='/' />
+      return <Redirect to='/' />;
     }
 
     let successMessage;
 
     if(this.props.submitSucceeded) {
-      successMessage =(
-        <div className="lesson-learned-success">
-          Lesson Learned!
-        </div>
-      )
+      this.props.dispatch(alert('Lesson learned!'));
     }
 
     let errorMessage;
@@ -34,7 +30,7 @@ export class ArticleForm extends React.Component {
         <div className="lesson-learned-error">
           {this.props.error}
         </div>
-      )
+      );
     }
 
     return (
@@ -46,7 +42,7 @@ export class ArticleForm extends React.Component {
             {successMessage}
             {errorMessage}
             <div className="input-fields">
-            <label htmlFor="title">Title</label>
+              <label htmlFor="title">Title</label>
               <Field
                 name="title"
                 type="text"
@@ -56,22 +52,23 @@ export class ArticleForm extends React.Component {
               />
               <label htmlFor="content">Body</label>
               <Field 
-              name="content"
-              element="textarea"
-              component="textarea"
-              label="Content"
+                name="content"
+                element="textarea"
+                component="textarea"
+                label="Content"
               />
               <label htmlFor="category">Category</label>
               <Field 
-              name="category"
-              type="text"
-              component="select"
-              label="Category">
-              <option value="work">Work</option>
-              <option value="school">School</option>
-              <option value="social">Social</option>
-              <option value="personal">Personal</option>
-              <option value="spiritual">Spiritual</option>
+                name="category"
+                type="text"
+                component="select"
+                label="Category">
+                <option value="select one"></option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="social">Social</option>
+                <option value="personal">Personal</option>
+                <option value="spiritual">Spiritual</option>
               </Field>
               <button
                 type="submit"
@@ -80,28 +77,28 @@ export class ArticleForm extends React.Component {
               </button>
             </div>
           </form>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 
-const selector = formValueSelector('ArticleForm')
-
 const afterSubmit = (results, dispatch) => {
-  dispatch(reset('ArticleForm'))
-}
+  dispatch(reset('ArticleForm'));
+};
 
 ArticleForm = reduxForm({
   form: 'ArticleForm',
   onSubmitSuccess: afterSubmit,
   onSubmitFail: (errors, dispatch) =>
-      dispatch(focus('ArticleForm', Object.keys(errors)[0]))
+    dispatch(focus('ArticleForm', Object.keys(errors)[0]))
 })(ArticleForm);
+
+const selector = formValueSelector('ArticleForm');
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
   category: selector(state, 'category')
-})
+});
 
-export default ArticleForm = connect(mapStateToProps)(ArticleForm)
+export default connect(mapStateToProps)(ArticleForm);

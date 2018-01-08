@@ -12,7 +12,7 @@ export function Header(props) {
       </div>
       <TopNav />
     </header>
-  )
+  );
 }
 
 const mapStateToProps = state => {
@@ -22,6 +22,6 @@ const mapStateToProps = state => {
     currentUser: state.auth.currentUser,
     state: state
   };
-}
+};
 
 export default connect(mapStateToProps)(Header);

@@ -16,20 +16,19 @@ export const FETCH_ALL_ARTICLES_ERROR = 'FETCH_ALL_ARTICLES_ERROR';
 export const fetchAllArticlesError =(err) => ({
   type: FETCH_ALL_ARTICLES_ERROR,
   error: err
-})
+});
 
 export const fetchAllArticles = () => (dispatch, getState) => {
-  const authToken = getState().auth.authToken
-  dispatch(fetchAllArticlesRequest())
-  console.log('fetching articles')
+  const authToken = getState().auth.authToken;
+  dispatch(fetchAllArticlesRequest());
   return fetch(`${API_BASE_URL}/articles`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
     }
   })
-  .then(res => normalizeResponseErrors(res))
-  .then(res => res.json())
-  .then(articles => dispatch(fetchAllArticlesSuccess(articles)))
-  .catch(err => console.error(err))
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(articles => dispatch(fetchAllArticlesSuccess(articles)))
+    .catch(err => console.error(err));
 };

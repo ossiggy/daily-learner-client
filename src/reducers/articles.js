@@ -11,20 +11,20 @@ export const articlesReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       data: action.articles, //I am expecting an array to be returned from this action
       loading: false,
-    })
+    });
   }
   if(action.type === actions.FETCH_ALL_ARTICLES_REQUEST) {
-    console.log('articles requested')
+    console.log('articles requested');
     return Object.assign({}, state, {
       data: null,
       loading: true
-    })
+    });
   }
   if(action.type === actions.FETCH_ALL_ARTICLES_ERROR) {
     return Object.assign({}, state, {
       error: action.error,
       loading: false
-    })
+    });
   }
   return state;
-}
+};

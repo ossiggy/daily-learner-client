@@ -25,7 +25,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 export const login = (username, password) => dispatch => {
-  console.log('logging in')
+  console.log('logging in');
   return (
     fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
@@ -37,45 +37,44 @@ export const login = (username, password) => dispatch => {
         password
       })
     })
-    .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-    .catch(err => {
-      const {code} = err;
-      if(code === 401) {
-        return Promise.reject(
-          new SubmissionError({
-            _error: 'Incorrect username or password'
-          })
-        )
-      }
-    })
-  )
-}
+      .then(res => normalizeResponseErrors(res))
+      .then(res => res.json())
+      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+      .catch(err => {
+        const {code} = err;
+        if(code === 401) {
+          return Promise.reject(
+            new SubmissionError({
+              _error: 'Incorrect username or password'
+            })
+          );
+        }
+      })
+  );
+};
 
 export const refreshAuthToken = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log('refreshing')
   return fetch(`${API_BASE_URL}/auth/refresh`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${authToken}`
     }
   })
-  .then(res => normalizeResponseErrors(res))
-  .then(res => res.json())
-  .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-  .catch(err => {
-    const {code} = err;
-    if(code === 401){
-      dispatch(setCurrentUser(null));
-      dispatch(setAuthToken(null));
-      clearAuthToken(authToken);
-    }
-  })
-}
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .catch(err => {
+      const {code} = err;
+      if(code === 401){
+        dispatch(setCurrentUser(null));
+        dispatch(setAuthToken(null));
+        clearAuthToken(authToken);
+      }
+    });
+};
 
 export const LOGOUT = 'LOGOUT';
 export const logout = () => ({
   type: LOGOUT
-})
+});

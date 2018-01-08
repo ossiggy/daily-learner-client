@@ -12,19 +12,18 @@ const initialState = {
 
 export default function authReducer(state = initialState, action) {
   if (action.type === SET_AUTH_TOKEN) {
-      return Object.assign({}, state, {
-          authToken: action.authToken
-      });
+    return Object.assign({}, state, {
+      authToken: action.authToken
+    });
   } else if (action.type === SET_CURRENT_USER) {
-      return Object.assign({}, state, {
-          currentUser: action.currentUser
-      });
+    return Object.assign({}, state, {
+      currentUser: action.currentUser
+    });
   } else if (action.type === LOGOUT) {
-    console.log('loggin out')
     return Object.assign({}, state, {
       currentUser: null,
       authToken: null
-    })
+    });
   }
   return state;
 }

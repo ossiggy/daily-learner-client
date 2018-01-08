@@ -59,7 +59,7 @@ export class App extends React.Component {
         <Route exact path="/articles/:id" component={Article} />
         <Route exact path="/update/:id" component={ArticleUpdater} />
       </div>
-    )
+    );
   }
 }
 

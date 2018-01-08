@@ -1,10 +1,13 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import Article from '../components/article';
+import {fetchArticle} from '../actions';
+
+import {Article} from '../components/article';
 
 describe('<Article />', () => {
   it('Renders without crashing', () => {
-    shallow(<Article />);
-  })
-})
+    const dispatch = jest.fn();
+    shallow(<Article params={{'id': '1234567'}} dispatch={dispatch} />);
+  });
+});

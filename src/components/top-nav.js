@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
-import {logout} from '../actions'
+import {logout} from '../actions';
 
 export function TopNav(props) {
   if(props.loggedIn){
@@ -22,17 +22,17 @@ export function TopNav(props) {
         <div className="username col-3">{props.currentUser.username}</div>
         <button className="logout-button col-1" onClick={()=>props.dispatch(logout())}>Log out</button>
       </nav> 
-    )
+    );
   }
   return (
     <nav className='nav'>
     </nav>
-  )
+  );
 }
 
 const mapStateToProps = state => ({
-    loggedIn:state.auth.currentUser !== null,
-    currentUser:state.auth.currentUser
-})
+  loggedIn:state.auth.currentUser !== null,
+  currentUser:state.auth.currentUser
+});
 
-export default connect(mapStateToProps)(TopNav)
+export default connect(mapStateToProps)(TopNav);

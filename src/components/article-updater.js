@@ -4,49 +4,48 @@ import {reduxForm, Field, focus, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
 import {fetchArticle, updateArticle, reset as formReset} from '../actions';
-
-import './article-updater.css'
+import './article-updater.css';
 
 export class ArticleUpdater extends React.Component{
 
   componentDidMount(){
     if(this.props.match.params.id){
-      this.props.dispatch(fetchArticle(this.props.match.params.id))
+      this.props.dispatch(fetchArticle(this.props.match.params.id));
     }
   }
 
   componentWillUnmount(){
-    this.props.dispatch(formReset())
+    this.props.dispatch(formReset());
   }
 
   onSubmit(article) {
     this.props.dispatch(updateArticle(article))
-    .then(() => <Redirect to='/articles' />)
+      .then(() => <Redirect to='/articles' />);
   }
 
   render(){
     if(!this.props.loggedIn){
-      return <Redirect to='/' />
+      return <Redirect to='/' />;
     }
 
     let successMessage;
     
-        if(this.props.submitSucceeded) {
-          successMessage =(
-            <div className="lesson-learned-success">
+    if(this.props.submitSucceeded) {
+      successMessage =(
+        <div className="lesson-learned-success">
               Lesson Learned!
-            </div>
-          )
-        }
+        </div>
+      );
+    }
     
-        let errorMessage;
-        if(this.props.error){
-          errorMessage =(
-            <div className="lesson-learned-error">
-              {this.props.error}
-            </div>
-          )
-        }
+    let errorMessage;
+    if(this.props.error){
+      errorMessage =(
+        <div className="lesson-learned-error">
+          {this.props.error}
+        </div>
+      );
+    }
 
     return (
       <div className='row'>
@@ -57,7 +56,7 @@ export class ArticleUpdater extends React.Component{
             {successMessage}
             {errorMessage}
             <div className="input-fields">
-            <label htmlFor="title">Title</label>
+              <label htmlFor="title">Title</label>
               <Field
                 id="title"
                 name="title"
@@ -66,20 +65,21 @@ export class ArticleUpdater extends React.Component{
                 value="this"
                 label="Title"
               />
-            <label htmlFor="content">Body</label>
+              <label htmlFor="content">Body</label>
               <Field 
-              id="content"
-              name="content"
-              element="textarea"
-              component="textarea"
-              label="Content"
+                id="content"
+                name="content"
+                element="textarea"
+                component="textarea"
+                label="Content"
               />
-            <label htmlFor="category">Category</label>
+              <label htmlFor="category">Category</label>
               <Field 
-              name="category"
-              type="text"
-              component="select"
-              label="Category">
+                name="category"
+                type="text"
+                component="select"
+                label="Category">
+                <option value="select one"></option>
                 <option value="work">Work</option>
                 <option value="school">School</option>
                 <option value="social">Social</option>
@@ -88,14 +88,14 @@ export class ArticleUpdater extends React.Component{
               </Field>
               <button
                 type="submit"
-                disabled={this.props.pristine || this.props.submitting}>
+                disabled={this.props.submitting}>
                   Submit
               </button>
             </div>
           </form>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 
@@ -103,18 +103,18 @@ ArticleUpdater = reduxForm({
   form: 'ArticleUpdater',
   enableReinitialize: true,
   onSubmitFail: (errors, dispatch) =>
-  dispatch(focus('ArticleUpdater', Object.keys(errors)[0]))
+    dispatch(focus('ArticleUpdater', Object.keys(errors)[0]))
 })(ArticleUpdater);
 
-const selector = formValueSelector('ArticleUpdater')
+const selector = formValueSelector('ArticleUpdater');
 
 const mapStateToProps = state => {
   return{
-  initialValues: state.singleArticle.data,
-  catgory: selector(state, 'category'),
-  loggedIn: state.auth.currentUser !== null
-  }
-}
-export default ArticleUpdater = connect(mapStateToProps)(ArticleUpdater);
+    initialValues: state.singleArticle.data,
+    catgory: selector(state, 'category'),
+    loggedIn: state.auth.currentUser !== null
+  };
+};
+export default connect(mapStateToProps)(ArticleUpdater);
 
 

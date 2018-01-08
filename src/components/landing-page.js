@@ -2,13 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import LoginForm from './login-form';
+import './landing-page.css';
 
 export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
-  let registerSection
-  let loginForm
+  let registerSection;
+  let loginForm;
   if(!props.loggedIn){
-    registerSection = <Link to='/register'>Sign Up And Start Tracking</Link>
-    loginForm = <LoginForm />
+    registerSection = <Link to='/register'>Sign Up And Start Tracking</Link>;
+    loginForm = <LoginForm />;
   }
   
   return (
@@ -25,7 +26,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
       {registerSection}
       {loginForm}
     </section>
-  )
+  );
 }
 
 const mapStateToProps = state => ({

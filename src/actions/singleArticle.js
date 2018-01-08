@@ -19,21 +19,21 @@ export const FETCH_ARTICLE_ERROR = 'FETCH_ARTICLE_ERROR';
 export const fetchArticleError =(err) => ({
   type: FETCH_ARTICLE_ERROR,
   error: err
-})
+});
 
 export const fetchArticle = (id) => (dispatch, getState) => {
-  console.log('fetch article dispatched with ' + id)
-  const authToken = getState().auth.authToken
+  console.log('fetch article dispatched with ' + id);
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/articles/${id}`,{
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
-      }
-    })
+    }
+  })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(article => dispatch(fetchArticleSuccess(article)))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err));
 };
 
 export const POST_ARTICLE_SUCCESS = 'POST_ARTICLE_SUCCESS';
@@ -51,29 +51,29 @@ export const POST_ARTICLE_ERROR = 'POST_ARTICLE_ERROR';
 export const postArticleError =(err) => ({
   type: POST_ARTICLE_ERROR,
   error: err
-})
+});
 
 export const postArticle = article => (dispatch, getState) => {
-  article._parent = getState().auth.currentUser.id
-    return fetch(`${API_BASE_URL}/articles`, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(article)
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .catch(err => {
-            const {reason, message, location} = err;
-            if (reason === 'ValidationError') {
-                return Promise.reject(
-                    new SubmissionError({
-                        [location]: message
-                    })
-                );
-            }
-        });
+  article._parent = getState().auth.currentUser.id;
+  return fetch(`${API_BASE_URL}/articles`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(article)
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+      const {reason, message, location} = err;
+      if (reason === 'ValidationError') {
+        return Promise.reject(
+          new SubmissionError({
+            [location]: message
+          })
+        );
+      }
+    });
 };
 
 export const UPDATE_ARTICLE_SUCCESS = 'UPDATE_ARTICLE_SUCCESS';
@@ -91,31 +91,31 @@ export const UPDATE_ARTICLE_ERROR = 'UPDATE_ARTICLE_ERROR';
 export const updateArticleError =(err) => ({
   type: UPDATE_ARTICLE_ERROR,
   error: err
-})
+});
 
 export const updateArticle = article => (dispatch, getState) => {
-  console.log(JSON.stringify(article))
-  const authToken = getState().auth.authToken
+  console.log(JSON.stringify(article));
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/articles/${article.id}`, {
-      method: 'PUT',
-      headers: {
-          'content-type': 'application/json',
-          Authorization: `Bearer: ${authToken}`
-      },
-      body: JSON.stringify(article)
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer: ${authToken}`
+    },
+    body: JSON.stringify(article)
   })
-      .then(res => normalizeResponseErrors(res))
-      .then(res => res.json())
-      .catch(err => {
-          const {reason, message, location} = err;
-          if (reason === 'ValidationError') {
-              return Promise.reject(
-                  new SubmissionError({
-                      [location]: message
-                  })
-              );
-          }
-      });
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+      const {reason, message, location} = err;
+      if (reason === 'ValidationError') {
+        return Promise.reject(
+          new SubmissionError({
+            [location]: message
+          })
+        );
+      }
+    });
 };
 
 export const DELETE_ARTICLE_SUCCESS = 'DELETE_ARTICLE_SUCCESS';
@@ -133,19 +133,19 @@ export const DELETE_ARTICLE_ERROR = 'DELETE_ARTICLE_ERROR';
 export const deleteArticleError = (err) => ({
   type: DELETE_ARTICLE_ERROR,
   error: err
-})
+});
 
 export const DELETE_ARTICLE = 'DELETE_ARTICLE';
 export const deleteArticle = (id) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/articles/${id}`, {
     method: 'delete',
     Authorization: `Bearer: ${authToken}`
-  }).then(() => dispatch(fetchAllArticles()))
+  }).then(() => dispatch(fetchAllArticles()));
 };
 
 // form reset action that will reset article form when component unmounts
 export const RESET = 'RESET';
 export const reset = () => ({
   type: RESET
-})
+});
