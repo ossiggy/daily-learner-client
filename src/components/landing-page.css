@@ -15,13 +15,13 @@
 
 .site-info-1{
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   width: 50%;
   margin-right: auto;
   color: white;
   text-align: left;
   display: inline-block;
-  margin-top: 35px;
+  margin-top: 55px;
 }
 
 .info-section-1 img{
@@ -44,13 +44,13 @@
 
 .site-info-2{
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   width: 50%;
   margin-left: auto;
+  margin-top: 60px;
   color: white;
   text-align: left;
   float: right;
-
 }
 
 .info-section-2 img{
@@ -73,7 +73,6 @@
 .register-login{
   text-align:center;
   margin-top: 30px;
-
 }
 
 .register-login a{
@@ -89,7 +88,7 @@
   border-radius: 25px;
   padding: 5px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .login-form h3, .login-form label{

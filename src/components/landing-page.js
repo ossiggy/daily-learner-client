@@ -7,11 +7,17 @@ import './landing-page.css';
 export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
   let registerSection;
   let loginForm;
+  let dashboard;
+
   if(!props.loggedIn){
     registerSection = <Link to='/register'>Sign Up And Start Tracking</Link>;
     loginForm = <LoginForm />;
   }
   
+  if(props.loggedIn){
+    dashboard = <Link to='/dashboard'>Take me to my dashboard!</Link>;
+  }
+
   return (
     <div className="landing-page col-12">
       <section className="info-section-1 col-12">
@@ -29,6 +35,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
         <img alt="journal" src="https://openclipart.org/image/2400px/svg_to_png/289453/Notepad.png"></img>
       </section>
       <div className="register-login col-6 offset-3">
+        {dashboard}
         {registerSection}
         {loginForm}
       </div>
