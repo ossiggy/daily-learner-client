@@ -92,6 +92,7 @@ const selector = formValueSelector('ArticleForm');
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
   category: selector(state, 'category'),
+  // set initial value for category so submit does not fail
   initialValues: {'category': 'work'}
 });
 

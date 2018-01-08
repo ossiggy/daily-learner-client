@@ -27,7 +27,7 @@ export class ArticleViewer extends Component {
         articles = this.props.articles.map((article, i) => {
           return <div key = {i} className="article-link">
             <Link to={`/articles/${article.id}`}>
-              <button className='article-title col-3' type='submit'>{article.title}</button>
+              <button className='article-title col-3' type='submit'>{article.title} ({article.category})</button>
             </Link>
             <Link to={`/update/${article.id}`}>
               <button className='update' type='submit'>Update</button>
