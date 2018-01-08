@@ -20,6 +20,7 @@ export function LandingPage(props){ //first page you see, decide whether you wan
 
   return (
     <div className="landing-page col-12">
+      <h1 className="col-12">Daily Learner</h1>
       <section className="info-section-1 col-12">
         <p className="site-info-1">
           The expression goes, "you learn something new every day". Imagine how much you could

@@ -36,6 +36,7 @@ export class ArticleForm extends React.Component {
     return (
       <div className='row'>
         <div className='col-8 offset-2'>
+          <h1 className="new-lesson-title col-12">New Lesson!</h1>
           <form
             className="article-form"
             onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>

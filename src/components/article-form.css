@@ -27,7 +27,7 @@ select{
   height: 40px;
   width: 130px;
   font-size: 20px;
-  background-color: #0644CD;
+  background-color: #00164E;
   color: white;
 }
 .article-form button{
@@ -40,4 +40,13 @@ select{
 .article-form input {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.new-lesson-title{
+  margin-top: 100px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 50px;
+  color: white;
+  background-color: #00164E;
 }
