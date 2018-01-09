@@ -43,6 +43,9 @@ export class ArticleViewer extends Component {
         <h2 className="col-6 offset-3">Previous Lessons</h2>
         <div className="col-6 offset-3 article-div">
           {articles}
+          <Link to='/dashboard'>
+            <button className="go-back" type='submit'>Go Back</button>
+          </Link>
         </div>
       </div>
     );

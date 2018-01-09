@@ -17,4 +17,5 @@ button {
   margin-top: 0px;
   font-size: 10px;
   width: auto;
+  cursor: pointer;
 }

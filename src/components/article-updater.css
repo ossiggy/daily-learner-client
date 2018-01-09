@@ -33,6 +33,7 @@ select{
   width: 90px;
   font-size: 20px;
   float: right;
+  border-radius: 50px;
 }
 
 .article-updater label, .lesson-learned-success{
