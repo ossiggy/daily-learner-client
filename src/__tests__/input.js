@@ -1,10 +1,18 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
-import {Input} from '../components/input';
+import Input from '../components/input';
 
 describe('<Input />', () => {
   it('Renders without crashing', () => {
-    shallow(<Input />);
+    const props = {
+      meta: {
+        touched: false,
+      },
+      input: {
+        name: 'foo'
+      }
+    };
+    shallow(<Input {...props} />);
   });
 });
