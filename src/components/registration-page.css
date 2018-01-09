@@ -4,6 +4,7 @@
 
 .registration-form{
  margin-top: 50px;
+ color: white;
 }
 
 .toSignIn, .registration-form button{
@@ -12,9 +13,27 @@
 
 .form-input input, .registration-form label{
   font-size: 20px;
+  border-radius: 50px;
 }
 
 .registration-form button{
-  height: 30px;
+  height: 40px;
   width: 90px;
+  font-size: 20px;
+  border-radius: 50px;
 }
+
+.home .toSignIn{
+  color: white;
+  margin-top: 15px;
+  border-radius: 50px;
+  font-size: 20px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-input input{
+  text-align: center;
+}
+

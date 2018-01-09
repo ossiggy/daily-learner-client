@@ -99,6 +99,7 @@
 .login-form h3, .login-form label{
   color: white;
   font-style: normal;
+  font-size: 22px;
 }
 
 .login-form button{
@@ -115,4 +116,14 @@
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.login-form input{
+  width: 60%;
+  text-align: center;
+}
+
+.form-error{
+  font-size: 18px;
+  color: yellow;
 }
