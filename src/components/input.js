@@ -11,6 +11,7 @@ export default class Input extends React.Component {
   }
 
   render() {
+
     let error;
     // if the user touched this input and entered an incorrect value, display an error
     if (this.props.meta.touched && this.props.meta.error) {

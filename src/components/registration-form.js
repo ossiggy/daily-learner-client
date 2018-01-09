@@ -18,8 +18,7 @@ export class RegistrationForm extends React.Component {
     return (
       <form
         className="registration-form"
-        onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values)
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
         )}>
         <label htmlFor="firstName">First name</label>
         <Field component={Input} type="text" name="firstName" />
@@ -58,7 +57,7 @@ export class RegistrationForm extends React.Component {
   }
 }
 
-export default reduxForm({
+export default RegistrationForm = reduxForm({
   form: 'registration',
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus('registration', Object.keys(errors)[0]))

@@ -14,8 +14,7 @@ export class LoginForm extends React.Component {
     return (
       <form
         className="login-form"
-        onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values)
+        onSubmit={this.props.handleSubmit(values =>this.onSubmit(values)
         )}>
         <h3 className="login-title">Sign In</h3>
         <label htmlFor="username">Username</label>
@@ -42,7 +41,7 @@ export class LoginForm extends React.Component {
   }
 }
 
-export default reduxForm({
+export default LoginForm = reduxForm({
   form: 'login',
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);

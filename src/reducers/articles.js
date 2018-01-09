@@ -9,7 +9,7 @@ const initialState = {
 export const articlesReducer = (state=initialState, action) => {
   if(action.type === actions.FETCH_ALL_ARTICLES_SUCCESS) {
     return Object.assign({}, state, {
-      data: action.articles, //I am expecting an array to be returned from this action
+      data: action.articles,
       loading: false,
     });
   }
