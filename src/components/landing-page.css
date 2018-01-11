@@ -107,6 +107,8 @@
   height: 30px;
   font-size: 20px;
   margin-bottom: 10px;
+  border-radius: 50px;
+  width: 100px;
 }
 
 .login-title{

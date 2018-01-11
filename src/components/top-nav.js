@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {logout} from '../actions';
 
+//TODO: add login and register buttons
+
 export function TopNav(props) {
   if(props.loggedIn){
     return (

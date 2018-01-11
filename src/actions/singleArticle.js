@@ -134,7 +134,6 @@ export const deleteArticleError = (err) => ({
   error: err
 });
 
-export const DELETE_ARTICLE = 'DELETE_ARTICLE';
 export const deleteArticle = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/articles/${id}`, {
