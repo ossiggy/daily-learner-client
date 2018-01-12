@@ -81,7 +81,7 @@ describe('userReducer', () => {
   });
 
   describe('registerUserError', () => {
-    it('Should return an error', () => {
+    it('Should return the error', () => {
       const error = 'err';
       const state = userReducer(undefined, actions.registerUserError(error));
       expect(state).toEqual({

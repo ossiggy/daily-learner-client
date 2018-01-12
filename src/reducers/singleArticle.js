@@ -22,7 +22,7 @@ export const singleArticleReducer = (state=initialState, action) => {
   if(action.type === actions.FETCH_ARTICLE_ERROR) {
     return Object.assign({}, state, {
       error: action.error,
-      loading: true
+      loading: false
     });
   }
 

@@ -7,7 +7,6 @@ import {
 const initialState = {
   authToken: null,
   currentUser: null,
-  userId: null
 };
 
 export default function authReducer(state = initialState, action) {
