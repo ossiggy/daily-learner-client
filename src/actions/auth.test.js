@@ -2,7 +2,11 @@ import {
   SET_AUTH_TOKEN,
   setAuthToken,
   SET_CURRENT_USER,
-  setCurrentUser
+  setCurrentUser,
+  login,
+  refreshAuthToken,
+  LOGOUT,
+  logout
 } from './auth';
 
 describe('setAuthToken', () => {

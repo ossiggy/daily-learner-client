@@ -64,6 +64,7 @@ export const postArticle = article => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(article => dispatch(postArticleSuccess(article)))
     .catch(err => {
       const {reason, message, location} = err;
       if (reason === 'ValidationError') {
@@ -105,6 +106,7 @@ export const updateArticle = article => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(article => dispatch(updateArticleSuccess(article)))
     .catch(err => {
       const {reason, message, location} = err;
       if (reason === 'ValidationError') {

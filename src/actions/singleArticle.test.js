@@ -31,6 +31,10 @@ import {
   reset
 } from './singleArticle';
 
+import {fetchAllArticles} from './articles';
+
+import {API_BASE_URL} from '../config';
+
 describe('fetchArticleSuccess', () => {
   it('Should return the action', () => {
     const article = {title: 'title'};
@@ -53,6 +57,37 @@ describe('fetchArticleError', () => {
     const action = fetchArticleError(error);
     expect(action.type).toEqual(FETCH_ARTICLE_ERROR);
     expect(action.error).toEqual('error');
+  });
+});
+
+describe('fetchArticle', () => {
+  it('Should dispatch fetchArticleSuccess', () => {
+    const article = {
+      title: 'title'
+    };
+
+    const id = 12345;
+
+    global.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({
+        ok: true,
+        json() {
+          return article;
+        }
+      })
+    );
+
+    const getState = () => ({auth: {authToken: 12345}});
+    const dispatch = jest.fn();
+    return fetchArticle(id)(dispatch, getState).then(() => {
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles/${id}`, {
+        method: 'GET',
+        headers: {
+          Authorization: 'Bearer 12345'
+        }
+      });
+      expect(dispatch).toHaveBeenCalledWith(fetchArticleSuccess(article));
+    });
   });
 });
 
@@ -81,6 +116,37 @@ describe('postArticleError', () => {
   });
 });
 
+describe('postArticle', () => {
+  it('Should dispatch postArticleSuccess', () => {
+    const article = {
+      title: 'title'
+    };
+
+    global.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({
+        ok: true,
+        json() {
+          return article;
+        }
+      })
+    );
+
+    const getState = () => ({auth: {currentUser: {id: 12345}}});
+    const dispatch = jest.fn();
+    return postArticle(article)(dispatch, getState).then(() => {
+      article._parent = getState().auth.currentUser.id;
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(article)
+      });
+      expect(dispatch).toHaveBeenCalledWith(postArticleSuccess(article));
+    });
+  });
+});
+
 describe('updateArticleSuccess', () => {
   it('Should return the action', () => {
     const article = {title: 'title'};
@@ -106,6 +172,39 @@ describe('updateArticleError', () => {
   });
 });
 
+describe('updateArticle', () => {
+  it('Should dispatch updateArticleSuccess', () => {
+    const article = {
+      id: 12345,
+      title: 'title'
+    };
+
+    global.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({
+        ok: true,
+        json() {
+          return article;
+        }
+      })
+    );
+
+    const getState = () => ({auth: {authToken: 12345}});
+    const dispatch = jest.fn();
+    return updateArticle(article)(dispatch, getState).then(() => {
+      const authToken = getState().auth.authToken;
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles/${article.id}`, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer: ${authToken}`
+        },
+        body: JSON.stringify(article)
+      });
+      expect(dispatch).toHaveBeenCalledWith(updateArticleSuccess(article));
+    });
+  });
+});
+
 describe('deleteArticleSuccess', () => {
   it('Should return the action', () => {
     const article = {title: 'title'};
@@ -128,6 +227,36 @@ describe('deleteArticleError', () => {
     const action = deleteArticleError(error);
     expect(action.type).toEqual(DELETE_ARTICLE_ERROR);
     expect(action.error).toEqual('error');
+  });
+});
+
+describe('deleteArticle', () => {
+  it('Should dispatch fetchAllArticles upon completion', () => {
+    const article = {
+      title: 'title'
+    };
+
+    const id = 12345;
+
+    global.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({
+        ok: true,
+        json() {
+          return article;
+        }
+      })
+    );
+
+    const getState = () => ({auth: {authToken: 12345}});
+    const dispatch = jest.fn();
+    return deleteArticle(id)(dispatch, getState).then(() => {
+      const authToken = getState().auth.authToken;
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles/${id}`, {
+        method: 'delete',
+        Authorization: `Bearer: ${authToken}`
+      });
+      expect(dispatch).toHaveBeenCalledWith(fetchAllArticles());
+    });
   });
 });
 
