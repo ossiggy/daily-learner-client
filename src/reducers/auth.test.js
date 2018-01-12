@@ -3,11 +3,7 @@ import authReducer from './auth';
 import * as actions from '../actions/auth';
 
 describe('authReducer', () => {
-  const auth = {
-    authToken: 1234567,
-    currentUser: 'user',
-  };
-
+  
   it('Should set the initial state when nothing is passed in', () => {
     const state = authReducer(undefined, {type: '__UNKNOWN'});
     expect(state).toEqual({
