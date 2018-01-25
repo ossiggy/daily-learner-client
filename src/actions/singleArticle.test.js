@@ -207,10 +207,8 @@ describe('updateArticle', () => {
 
 describe('deleteArticleSuccess', () => {
   it('Should return the action', () => {
-    const article = {title: 'title'};
-    const action = deleteArticleSuccess(article);
+    const action = deleteArticleSuccess();
     expect(action.type).toEqual(DELETE_ARTICLE_SUCCESS);
-    expect(action.article).toEqual({title: 'title'});
   });
 });
 
@@ -231,19 +229,13 @@ describe('deleteArticleError', () => {
 });
 
 describe('deleteArticle', () => {
-  it('Should dispatch fetchAllArticles upon completion', () => {
-    const article = {
-      title: 'title'
-    };
+  it('Should dispatch deleteArticleSuccess upon completion', () => {
 
     const id = 12345;
 
     global.fetch = jest.fn().mockImplementation(() => 
       Promise.resolve({
-        ok: true,
-        json() {
-          return article;
-        }
+        ok: true
       })
     );
 
@@ -255,7 +247,7 @@ describe('deleteArticle', () => {
         method: 'delete',
         Authorization: `Bearer: ${authToken}`
       });
-      expect(dispatch).toHaveBeenCalledWith(fetchAllArticles());
+      expect(dispatch).toHaveBeenCalledWith(deleteArticleSuccess());
     });
   });
 });

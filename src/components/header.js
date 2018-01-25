@@ -9,6 +9,10 @@ export function Header(props) {
       <div className="head-box">
         <h1 className="main-title">Daily Learner</h1>
         <h2 className="subtitle">Tracking life lessons one day at a time</h2>
+        <button className="menu-button"></button> 
+        {/* make button toggle menu state */}
+        {/* menu has absolute position - ignore everything else, put it here */}
+        {/* if there is a problem having it show, change z index (depth from user) */}
       </div>
       <TopNav />
     </header>

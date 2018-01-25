@@ -12,7 +12,6 @@
   width: 100%;
   background-color: #02174E;
   padding: 0px;
-  padding-left:60px;
   margin-top: 0px;
   border-radius: 150px;
   box-shadow: 10px 8px 16px 2px #262626;
@@ -21,28 +20,26 @@
 .site-info-1{
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
-  width: 50%;
-  margin-right: auto;
   color: white;
-  text-align: left;
+  text-align: center;
   display: inline-block;
-  margin-top: 55px;
+  margin-top: 45px;
 }
 
 .info-section-1 img{
   height:250px;
-  float: right;
   border-radius: 150px;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
   /* border-top-right-radius: 150px;
   border-bottom-right-radius: 150px; */
 }
 
 .info-section-2{
-  width: 100%;
   background-color: #02174E;
   padding: 0px;
-  padding-right:60px;
-  margin-top: 30px;
   border-radius: 150px;
   box-shadow: 10px 8px 16px 2px #262626;
 }
@@ -50,20 +47,18 @@
 .site-info-2{
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
-  width: 50%;
-  margin-left: auto;
   margin-top: 60px;
   color: white;
   text-align: left;
-  float: right;
 }
 
 .info-section-2 img{
   height:250px;
-  float: left;
   border-radius: 150px;
-  margin-left:150px;
   margin-top: 35px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .author{
@@ -128,4 +123,28 @@
 .form-error{
   font-size: 18px;
   color: yellow;
+}
+
+.site-info-1-container{
+  padding: 10px;
+  opacity: .7;
+}
+
+.brain-scan-container{
+  opacity: .6;
+}
+
+/* fix padding of actual text, not the container */
+
+@media screen and (min-width: 885px){
+
+  .site-info-1-container{
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 885px){
+  .info-section-1{
+    border-radius: 50px;
+  }
 }

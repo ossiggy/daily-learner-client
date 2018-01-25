@@ -6,6 +6,44 @@
   font-family: 'Bad Script', cursive;
 }
 
+.menu-button{
+  background-image: url("https://image.flaticon.com/icons/png/512/56/56763.png");
+  background-size: 100%;
+  height: 50px;
+  width: 50px;
+}
+
+/* putting media queries inside classes */
+
+@media screen and (max-width: 805px){
+  .navLink{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .header h1{
+    font-size: 20px;
+    display: inline-block;
+  }
+
+  .header .subtitle{
+    display: none;
+  }
+
+  .username{
+    display: none;
+  }
+
+  .logout-button{
+    display: none;
+  }
+
+  .menu-button{
+    margin-top: 7px;
+  }
+}
+
 @media screen and (min-width: 805px){
 
   .main-title, .subtitle {
@@ -65,6 +103,10 @@
   .header div{
     display: inline-block;
     padding-right: 5px;
+  }
+
+  .menu-button{
+    display: none;
   }
 }
 

@@ -120,9 +120,8 @@ export const updateArticle = article => (dispatch, getState) => {
 };
 
 export const DELETE_ARTICLE_SUCCESS = 'DELETE_ARTICLE_SUCCESS';
-export const deleteArticleSuccess = article => ({
-  type: DELETE_ARTICLE_SUCCESS,
-  article
+export const deleteArticleSuccess = () => ({
+  type: DELETE_ARTICLE_SUCCESS
 });
 
 export const DELETE_ARTICLE_REQUEST ='DELETE_ARTICLE_REQUEST';
@@ -141,7 +140,8 @@ export const deleteArticle = (id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/articles/${id}`, {
     method: 'delete',
     Authorization: `Bearer: ${authToken}`
-  }).then(() => dispatch(fetchAllArticles()));
+  }).then(() => dispatch(deleteArticleSuccess()))
+    .then(() => dispatch(fetchAllArticles()));
 };
 
 // form reset action that will reset article form when component unmounts

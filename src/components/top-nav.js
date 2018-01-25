@@ -9,16 +9,16 @@ export function TopNav(props) {
   if(props.loggedIn){
     return (
       <nav className='nav'>
-        <NavLink exact to="/dashboard" activeClassName="active" className="col-3">
+        <NavLink exact to="/dashboard" activeClassName="active" className="col-3 navLink">
           Home
         </NavLink>
-        <NavLink exact to="/articleform" activeClassName="active" className="col-3">
+        <NavLink exact to="/articleform" activeClassName="active" className="col-3 navLink">
           New Lesson
         </NavLink>
-        <NavLink to="/articles/" activeClassName="active" className="col-3">
+        <NavLink to="/articles/" activeClassName="active" className="col-3 navLink">
           Previous Lessons
         </NavLink>
-        <NavLink to="/" activeClassName="active" className="col-3">
+        <NavLink to="/" activeClassName="active" className="col-3 navLink">
           About
         </NavLink>
         <div className="username col-3">{props.currentUser.username}</div>
