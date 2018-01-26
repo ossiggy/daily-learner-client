@@ -14,6 +14,7 @@
 
 .col-4,
 .col-6,
+.col-10,
 .col-12 {
   float: left;
   width: 100%;
@@ -47,11 +48,15 @@
   }
 
   .col-2{
-    width: 16.7%;
+    width: 16.6%;
   }
 
   .col-3{
     width: 25%;
+  }
+
+  .col-4{
+    width: 33.34%
   }
 
   .col-6 {
@@ -62,7 +67,7 @@
     width: 66.67%;
   }
 
-  .col-4{
-    width: 33.34%
+  .col-10{
+    width: 83.34%
   }
 }

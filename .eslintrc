@@ -32,6 +32,7 @@
     "no-console": "warn", //allows but warn about console like `console.log()`
     "no-class-assign": 0, //turns off no class assign
     "no-unused-vars": "warn", //warns about unused variables
+    "no-restricted-globals": 0,
     "no-eval": "error", //disallows `eval()` usage
     "indent": [2, 2, {"SwitchCase": 1}], //enforce 2 space indents (not tabs)
     "quotes": ["error", "single"], //prefer single quotes over double quotes

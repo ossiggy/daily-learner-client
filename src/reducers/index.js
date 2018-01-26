@@ -4,11 +4,13 @@ import {articlesReducer} from './articles';
 import {singleArticleReducer} from './singleArticle';
 import authReducer from './auth';
 import {userReducer} from './users';
+import headerReducer from './header';
 
 export default combineReducers({
   articles: articlesReducer,
   singleArticle: singleArticleReducer,
   auth: authReducer,
   user: userReducer,
-  form: formReducer
+  form: formReducer,
+  menu: headerReducer
 });

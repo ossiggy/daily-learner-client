@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import {logout} from '../actions';
-
+import LoginForm from './login-form';
+import './header.css';
+ 
 //TODO: add login and register buttons
 
 export function TopNav(props) {
@@ -27,7 +29,8 @@ export function TopNav(props) {
     );
   }
   return (
-    <nav className='nav'>
+    <nav className='register-container nav'>
+      <LoginForm />
     </nav>
   );
 }

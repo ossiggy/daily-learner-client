@@ -8,16 +8,16 @@
   text-shadow: 5px 10px 10px #262626;
 }
 
-.info-section-1{
-  width: 100%;
+.pill{
   background-color: #02174E;
   padding: 0px;
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 150px;
   box-shadow: 10px 8px 16px 2px #262626;
 }
 
-.site-info-1{
+.site-info {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   color: white;
@@ -26,7 +26,7 @@
   margin-top: 45px;
 }
 
-.info-section-1 img{
+.brain-scan{
   height:250px;
   border-radius: 150px;
   max-width: 500px;
@@ -37,22 +37,7 @@
   border-bottom-right-radius: 150px; */
 }
 
-.info-section-2{
-  background-color: #02174E;
-  padding: 0px;
-  border-radius: 150px;
-  box-shadow: 10px 8px 16px 2px #262626;
-}
-
-.site-info-2{
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  margin-top: 60px;
-  color: white;
-  text-align: left;
-}
-
-.info-section-2 img{
+.journal{
   height:250px;
   border-radius: 150px;
   margin-top: 35px;
@@ -98,10 +83,8 @@
 }
 
 .login-form button{
-  margin-top: 10px;
   height: 30px;
   font-size: 20px;
-  margin-bottom: 10px;
   border-radius: 50px;
   width: 100px;
 }
@@ -116,7 +99,7 @@
 }
 
 .login-form input{
-  width: 60%;
+  width: 100%;
   text-align: center;
 }
 
@@ -125,7 +108,7 @@
   color: yellow;
 }
 
-.site-info-1-container{
+.site-info-container{
   padding: 10px;
   opacity: .7;
 }

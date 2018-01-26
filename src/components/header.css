@@ -4,6 +4,7 @@
   color: white;
   position: fixed;
   font-family: 'Bad Script', cursive;
+  z-index: 10;
 }
 
 .menu-button{
@@ -11,6 +12,37 @@
   background-size: 100%;
   height: 50px;
   width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+  padding-top: 20px;
+  background-color: #8F8F8F;
+  border-color: #595959
+}
+
+.menu-option{
+  background-color: gray;
+  border: 2px solid black;
+  border-top: none;
+  text-align: center;
+  width: 250px;
+  height: 50px;
+}
+
+.menu-option a{
+  text-decoration: none;
+}
+
+.menu-option button{
+  
+}
+
+.dropdown-menu{
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+  top: 50;
 }
 
 /* putting media queries inside classes */
@@ -18,6 +50,18 @@
 @media screen and (max-width: 805px){
   .navLink{
     display: none;
+  }
+  .username{
+    display: none;
+  }
+
+  .logout-button{
+    display: none;
+  }
+
+  .header h1{
+    font-size: 20px;
+    display: inline-block;
   }
 }
 
@@ -41,6 +85,12 @@
 
   .menu-button{
     margin-top: 7px;
+  }
+}
+
+@media screen and (max-width: 1015px){
+  .subtitle {
+    display: none !important;
   }
 }
 
@@ -108,6 +158,10 @@
   .menu-button{
     display: none;
   }
+
+  .dropdown-menu{
+    display: none;
+  }
 }
 
 .header a{
@@ -125,6 +179,12 @@
   color:white
 }
 
-.header button{
-  float: right;
+.sign-up-link{
+  margin-right: 0 !important;
+  padding: 0 !important;
+  margin-left: 5px;
+}
+
+.sign-up-link a:hover{
+  background-color: none;
 }
