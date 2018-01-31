@@ -1,5 +1,5 @@
 .landing-page h1{
-  margin-top: 50px;
+  margin-top: 75px;
   text-align: center;
   font-size: 80px;
   font-family: 'Bad Script', cursive;
@@ -115,6 +115,12 @@
 
 .brain-scan-container{
   opacity: .6;
+}
+
+.demo-mode{
+  height: 50px;
+  font-size: 24px;
+  border-radius: 25px;
 }
 
 /* fix padding of actual text, not the container */

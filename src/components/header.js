@@ -13,27 +13,27 @@ export function Header(props) {
     dropDownMenu = (
       <div className='dropdown-menu col-3'>
         <div className='menu-option to-home'>
-          <NavLink exact to="/dashboard" activeClassName="active">
+          <NavLink exact to="/dashboard" activeClassName="active" onClick={() => props.dispatch(menuToggle())} >
             Home
           </NavLink>
         </div>
         <div className='menu-option to-new'>
-          <NavLink exact to="/articleform" activeClassName="active">
+          <NavLink exact to="/articleform" activeClassName="active" onClick={() => props.dispatch(menuToggle())} >
             New Lesson
           </NavLink>
         </div>
         <div className='menu-option to-previous'>
-          <NavLink to="/articles/" activeClassName="active">
+          <NavLink to="/articles/" activeClassName="active" onClick={() => props.dispatch(menuToggle())} >
             Previous Lessons
           </NavLink>
         </div>
         <div className='menu-option to-about'>
-          <NavLink to="/" activeClassName="active">
+          <NavLink to="/" activeClassName="active" onClick={() => props.dispatch(menuToggle())} >
             About
           </NavLink>
         </div>
         <div className='menu-option to-log-out'>
-          <button onClick={props.dispatch(logout())}>Log Out</button>
+          <button onClick={() => props.dispatch(logout())}>Log Out</button>
         </div>
       </div>
     );

@@ -10,6 +10,8 @@ import {
 
 import {API_BASE_URL} from '../config';
 
+//eslint-disable-next-line
+
 describe('fetchAllArticlesSuccess', () => {
   it('Should return the action', () => {
     const articles = {title: 'title'};

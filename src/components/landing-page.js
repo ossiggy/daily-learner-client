@@ -1,21 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
-import LoginForm from './login-form';
+import {Link} from 'react-router-dom';
+import {login} from '../actions';
 import './landing-page.css';
 
-export function LandingPage(props){ //first page you see, decide whether you want to redirect or update DOM
+export function LandingPage(props){
   let dashboard;
+  let demoMode;
   
   if(props.loggedIn){
     dashboard = <Link to='/dashboard'>Take me to my dashboard!</Link>;
   }
-  // remove tags for p and img (for ex) and replace with container divs to 
-  // size properly.  Then, add semantic html into the divs to see how their padding
+
+  if(!props.loggedIn){
+    demoMode = <button className='demo-mode col-2 offset-5' onClick={() => props.dispatch(login('demomode', 'demomode'))} >Demo Mode</button>;
+  }
 
   return (
     <div className="landing-page col-12">
       <h1 className="col-12">Daily Learner</h1>
+      {demoMode}
       <section className="pill col-12">
         <div className="site-info-container col-6">
           <p className="site-info col-12">
