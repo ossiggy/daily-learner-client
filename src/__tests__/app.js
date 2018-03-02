@@ -10,9 +10,4 @@ describe('<App />', () => {
   it('Renders without crashing', () => {
     shallow(<App />);
   });
-
-  it('calls componentDidMount', () => {
-    const wrapper = mount(<App />);
-    expect(App.prototype.componentDidMount.calledOnce).to.equal(true);
-  });
 });
