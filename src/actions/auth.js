@@ -32,6 +32,7 @@ export const login = (username, password) => dispatch => {
       headers: {
         'Content-Type': 'application/json'
       },
+      mode: 'cors',
       body: JSON.stringify({
         username,
         password
