@@ -25,8 +25,7 @@ export const fetchAllArticles = () => (dispatch, getState) => {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`,
-      mode: 'cors',
-      'Access-Control-Allow-Origin': '*'
+      mode: 'cors'
     }
   })
     .then(res => normalizeResponseErrors(res))

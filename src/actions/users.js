@@ -53,8 +53,7 @@ export const registerUser = user => dispatch => {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      mode: 'cors',
-      'Access-Control-Allow-Origin': '*'
+      mode: 'cors'
     },
     body: JSON.stringify(user)
   })
