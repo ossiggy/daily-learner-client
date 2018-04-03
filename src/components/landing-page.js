@@ -13,7 +13,7 @@ export function LandingPage(props){
   }
 
   if(!props.loggedIn){
-    demoMode = <button className='demo-mode col-2 offset-5' onClick={() => props.dispatch(login('DemoMode', 'password'))} >Demo Mode</button>;
+    demoMode = <button className='demo-mode col-2 offset-5' onClick={() => props.dispatch(login("DemoMode", "password"))} >Demo Mode</button>;
   }
 
   return (
