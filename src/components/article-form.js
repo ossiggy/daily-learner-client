@@ -10,7 +10,7 @@ export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
-      .then(() => alert('Lesson learned!'));
+      .then(() => alert('Submitted!'));
   }
   
   render(){
@@ -21,7 +21,7 @@ export class ArticleForm extends React.Component {
     let successMessage;
 
     if(this.props.submitSucceeded) {
-      this.props.dispatch(alert('Lesson learned!'));
+      this.props.dispatch(alert('Submitted!'));
     }
 
     let errorMessage;
