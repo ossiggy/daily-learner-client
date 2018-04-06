@@ -11,7 +11,6 @@ export function RegistrationPage(props) {
   }
   return (
     <div className="home col-6 offset-3">
-      <h2>Register and start tracking your lessons!</h2>
       <RegistrationForm />
     </div>
   );

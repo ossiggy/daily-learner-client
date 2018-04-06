@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {Link} from 'react-router-dom';
 import Input from './input';
-import {login} from '../actions/auth';
+import {login, menuToggle} from '../actions';
 import {required, nonEmpty} from '../validators';
 import './header.css';
 
@@ -48,7 +48,7 @@ export class LoginForm extends React.Component {
         </div>
         <div className="col-2">
           <Link className="sign-up-link" to='/register'>
-            <button type='submit'>Sign Up</button>
+            <button type='submit' onClick={()=>this.props.dispatch(menuToggle())}>Sign Up</button>
           </Link>
         </div>
       </form>
