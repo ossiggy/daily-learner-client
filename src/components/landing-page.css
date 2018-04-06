@@ -99,10 +99,27 @@
 
 /* fix padding of actual text, not the container */
 
-@media screen and (min-width: 886px){
+@media screen and (max-width: 530px){
+  .about-title h1{
+    font-size: 50px;
+  }
 
-  .site-info-1-container{
-    padding-left: 30px;
+  .about-title {
+    height: 100px !important;
+  }
+
+  .site-info {
+    font-size: 16px !important;
+  }
+
+  .bottom{
+    text-align: center;
+    margin-top: 35px !important;
+    padding: 10px; 
+  }
+
+  .top{
+    margin-top: 65px !important;
   }
 }
 
@@ -138,10 +155,11 @@
   }
 
   .brain-scan-container{
-    width: 100%;
-    opacity: .3;
+    width: 90%;
+    opacity: .2;
     position: absolute;
     z-index: 0;
+    margin-left:10px;
   }
 
   .brain-scan{

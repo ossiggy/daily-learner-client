@@ -22,8 +22,8 @@ export function LandingPage(props){
 
   return (
     <div className="landing-page col-12">
-      <section className="about-title pill col-6 offset-3">
-        <h1 className="col-12">About this site</h1>
+      <section className="about-title pill col-12">
+        <h1>About this site</h1>
       </section>
       {demoMode}
       <section className="pill col-12">
