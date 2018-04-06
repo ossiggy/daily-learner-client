@@ -13,15 +13,19 @@ export function LandingPage(props){
   }
 
   if(!props.loggedIn){
-    demoMode = <button className='demo-mode' onClick={() => props.dispatch(login("demomode", "password"))} >Demo</button>;
+    demoMode = (
+    <div className="demo-mode-container">
+      <button className='demo-mode' onClick={() => props.dispatch(login("demomode", "password"))} >Demo</button>
+    </div>
+    );
   }
 
   return (
     <div className="landing-page col-12">
-      <h1 className="col-12">Daily Learner</h1>
-      <div className="demo-mode-container col-3 offset-5">
-        {demoMode}
-      </div>
+      <section className="about-title pill col-6 offset-3">
+        <h1 className="col-12">About this site</h1>
+      </section>
+      {demoMode}
       <section className="pill col-12">
         <div className="site-info-container col-6">
           <p className="site-info top col-12">
