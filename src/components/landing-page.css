@@ -112,18 +112,18 @@
     font-size: 16px !important;
   }
 
-  .bottom{
-    text-align: center;
-    margin-top: 35px !important;
-    padding: 10px; 
+  .brain-scan-container{
+    margin-left: 0 !important;
   }
 
-  .top{
-    margin-top: 65px !important;
+  .bottom{
+    padding: 15px !important;
+    margin-top: 25px !important;
   }
+
 }
 
-@media screen and (max-width: 886px){
+@media screen and (max-width: 885px){
   
   .demo-mode-container{
     width: 100%;
@@ -143,34 +143,37 @@
   }
   
   .top{
+    margin-top: 65px;
     border-radius: 50px;
     z-index: 1;
   }
 
   .bottom{
-    margin-top: 5px;
-    padding-top: 0;
-    padding-bottom: 10px;
     z-index: 1;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px; 
   }
 
   .brain-scan-container{
-    width: 90%;
+    width: 100%;
+    text-align: center;
     opacity: .2;
     position: absolute;
     z-index: 0;
     margin-left:10px;
   }
 
-  .brain-scan{
-    z-index: 0;
-  }
-
   .site-info-container{
     z-index: 1;
   }
 
+  .brain-scan{
+    margin-top: 30px;  
+  }
+
   .journal{
-    height: 150px;
+    height: 300px;
+    margin-top: 15px;
   }
 }
