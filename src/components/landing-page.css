@@ -37,12 +37,10 @@
 .brain-scan{
   height:250px;
   border-radius: 150px;
-  max-width: 500px;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: block;
-  /* border-top-right-radius: 150px;
-  border-bottom-right-radius: 150px; */
 }
 
 .journal{
@@ -79,9 +77,7 @@
 .login-form{
   background-color: #02174E;
   border-radius: 25px;
-  padding: 5px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 25px;
 }
 
 .login-form h3, .login-form label{
@@ -109,11 +105,7 @@
 .login-form input{
   width: 100%;
   text-align: center;
-}
-
-.form-error{
-  font-size: 18px;
-  color: yellow;
+  max-width: 200px;
 }
 
 .site-info-container{
@@ -125,23 +117,64 @@
   opacity: .6;
 }
 
+.demo-mode-container{
+  height: 50px;
+  display: inline-block;
+}
+
 .demo-mode{
+  width: 100%;
   height: 50px;
   font-size: 24px;
   border-radius: 25px;
+  box-shadow: 10px 8px 16px 2px #262626;
+}
+
+.demo-mode:focus{
+  outline: none;
 }
 
 /* fix padding of actual text, not the container */
 
-@media screen and (min-width: 885px){
+@media screen and (min-width: 886px){
 
   .site-info-1-container{
     padding-left: 30px;
   }
 }
 
-@media screen and (max-width: 885px){
+@media screen and (max-width: 886px){
   .info-section-1{
     border-radius: 50px;
+  }
+
+  .demo-mode-container{
+    width: 100%;
+    text-align: center;
+  }
+
+  .demo-mode{
+    width: 30%;
+  }
+
+  .bottom{
+    margin-top: 5px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .brain-scan-container{
+    width: 100%;
+    opacity: .3;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .site-info-container{
+    z-index: 1;
+  }
+
+  .journal{
+    height: 150px;
   }
 }

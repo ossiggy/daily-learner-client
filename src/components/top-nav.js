@@ -10,7 +10,7 @@ import './header.css';
 export function TopNav(props) {
   if(props.loggedIn){
     return (
-      <nav className='nav'>
+      <nav className='nav col-12'>
         <NavLink exact to="/dashboard" activeClassName="active" className="col-3 navLink">
           Home
         </NavLink>

@@ -4,12 +4,17 @@ import {NavLink} from 'react-router-dom';
 import {menuToggle, logout} from '../actions';
 import './header.css';
 import TopNav from './top-nav';
+import LoginForm from './login-form';
+
+const FontAwesome = require('react-fontawesome');
+
+// give all header elements size options (small medium large)
 
 export function Header(props) {
 
   let dropDownMenu;
 
-  if(props.menuOpen){
+  if(props.menuOpen && props.loggedIn){
     dropDownMenu = (
       <div className='dropdown-menu col-3'>
         <div className='menu-option to-home'>
@@ -33,19 +38,32 @@ export function Header(props) {
           </NavLink>
         </div>
         <div className='menu-option to-log-out'>
-          <button onClick={() => props.dispatch(logout())}>Log Out</button>
+          <button onClick={() => {
+            props.dispatch(logout())
+            props.dispatch(menuToggle())
+            }}>Log Out</button>
         </div>
       </div>
     );
   }
 
+  if(props.menuOpen && !props.loggedIn){
+    dropDownMenu = (
+    <div className="dropdown-menu col-3">
+      <div className="menu-option">
+        <LoginForm />
+      </div>
+    </div>
+    )
+  }
+
   return (
     <header className="header">
-      <div className="head-box">
+      <div className="head-box col-12">
         <h1 className="main-title">Daily Learner</h1>
         <h2 className="subtitle">Tracking life lessons one day at a time</h2>
         {dropDownMenu}
-        <button className="menu-button col-2" onClick={() =>props.dispatch(menuToggle())}></button> 
+        <FontAwesome name='bars' size="3x" className="menu-button" onClick={()=> props.dispatch(menuToggle())}/>
         {/* make button toggle menu state */}
         {/* menu has absolute position - ignore everything else, put it here */}
         {/* if there is a problem having it show, change z index (depth from user) */}
@@ -57,7 +75,8 @@ export function Header(props) {
 
 const mapStateToProps = state => {
   return {
-    menuOpen: state.menu.menuOpen
+    menuOpen: state.menu.menuOpen,
+    loggedIn: state.auth.currentUser !== null
   };
 };
 

@@ -19,3 +19,7 @@ button {
   width: auto;
   cursor: pointer;
 }
+
+button:active{
+  transform: translateY(4px);
+}
