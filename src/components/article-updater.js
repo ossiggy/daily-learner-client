@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import {reduxForm, Field, focus, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
@@ -86,6 +86,9 @@ export class ArticleUpdater extends React.Component{
                 disabled={this.props.submitting}>
                   Submit
               </button>
+              <Link to='/articles'>
+                <button className="go-back-form" type='submit'>Go Back</button>
+              </Link>
             </div>
           </form>
         </div>
