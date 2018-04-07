@@ -60,7 +60,9 @@ export function Header(props) {
   return (
     <header className="header">
       <div className="head-box col-12">
+      <NavLink exact to="/dashboard" activeClassName="active">
         <h1 className="main-title">Daily Learner</h1>
+      </NavLink>
         <h2 className="subtitle">Tracking life lessons one day at a time</h2>
         {dropDownMenu}
         <FontAwesome name='bars' size="3x" className="menu-button" onClick={()=> props.dispatch(menuToggle())}/>

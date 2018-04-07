@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {fetchAllArticles, deleteArticle} from '../actions/';
 import './article-viewer.css';
 
+const FontAwesome = require('react-fontawesome');
+
 export class ArticleViewer extends Component {
 
   componentDidMount(){
@@ -25,14 +27,18 @@ export class ArticleViewer extends Component {
       }
       if(Object.keys(this.props.articles)){
         articles = this.props.articles.map((article, i) => {
-          return <div key = {i} className="article-link">
-            <Link to={`/articles/${article.id}`}>
-              <button className='article-title col-3' type='submit'>{article.title} ({article.category})</button>
-            </Link>
-            <Link to={`/update/${article.id}`}>
-              <button className='update' type='submit'>Update</button>
-            </Link>
-            <button className='delete' onClick={()=>this.props.dispatch(deleteArticle(article.id))}>Delete</button>
+          return <div key = {i} className="article-link col-12">
+            <div className="col-8">
+              <Link to={`/articles/${article.id}`}>
+                <button className='article-title' type='submit'>{article.title} ({article.category})</button>
+              </Link>
+            </div>
+            <div className="col-4">
+              <Link to={`/update/${article.id}`}>
+                <FontAwesome name="pencil" size="2x" className="update"/>
+              </Link>
+              <FontAwesome name="trash-o" size="2x" className="update" onClick={()=>this.props.dispatch(deleteArticle(article.id))} />
+            </div>
           </div>;
         });
       }

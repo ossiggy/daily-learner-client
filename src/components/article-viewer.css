@@ -1,10 +1,13 @@
-.article-link .update{
-  background-color: #64BE64;
-  border-color: #41A941;
-  width: 100px;
-  height: 50px;
-  font-size: 25px;
-  border-radius: 50px;
+
+.update {
+  color: white;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.update:hover{
+  cursor: pointer;
+  color: lightgray;
 }
 
 .article-link .delete{
@@ -47,6 +50,10 @@
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   height: 100%;
+}
+
+.article-viewer a{
+  width: 100%;
 }
 
 .go-back{
