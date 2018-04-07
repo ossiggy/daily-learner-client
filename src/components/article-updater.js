@@ -27,15 +27,9 @@ export class ArticleUpdater extends React.Component{
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
-
-    let successMessage;
     
     if(this.props.submitSucceeded) {
-      successMessage =(
-        <div className="lesson-learned-success">
-              Lesson Learned!
-        </div>
-      );
+      this.props.dispatch(alert("Update Successful!"))
     }
     
     let errorMessage;
@@ -53,7 +47,6 @@ export class ArticleUpdater extends React.Component{
           <form
             className="article-updater"
             onSubmit={this.props.handleSubmit(article => this.onSubmit(article))}>
-            {successMessage}
             {errorMessage}
             <div className="input-fields">
               <label htmlFor="title">Title</label>

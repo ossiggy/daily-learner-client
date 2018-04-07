@@ -2,20 +2,11 @@
 .update {
   color: white;
   padding-left: 10px;
-  padding-right: 20px;
 }
 
 .update:hover{
   cursor: pointer;
   color: lightgray;
-}
-
-.article-link .delete{
-  background-color: red;
-  border-color: red;
-  height: 50px;
-  font-size: 25px;
-  border-radius: 50px;
 }
 
 .article-link{
