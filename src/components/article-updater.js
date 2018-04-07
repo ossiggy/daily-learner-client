@@ -19,17 +19,19 @@ export class ArticleUpdater extends React.Component{
   }
 
   onSubmit(article) {
-    this.props.dispatch(updateArticle(article))
-      .then(() => <Redirect to='/articles' />);
+    this.props.dispatch(updateArticle(article));
   }
 
   render(){
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
+
+    let successMessage;
     
     if(this.props.submitSucceeded) {
-      this.props.dispatch(alert("Update Successful!"))
+      alert('Success!')
+      return <Redirect to='/articles' />
     }
     
     let errorMessage;
