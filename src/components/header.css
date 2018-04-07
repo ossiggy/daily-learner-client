@@ -9,6 +9,10 @@
   height: 65px;
 }
 
+.header h1:hover{
+  color: lightgray;
+}
+
 .main-title, .subtitle{
   padding-left: 5px;
 }
