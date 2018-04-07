@@ -16,7 +16,7 @@ export function Header(props) {
 
   if(props.menuOpen && props.loggedIn){
     dropDownMenu = (
-      <div className='dropdown-menu col-3'>
+      <div className='dropdown-menu col-3' onMouseLeave={()=> props.dispatch(menuToggle())}>
         <div className='menu-option to-home'>
           <NavLink exact to="/dashboard" className="link" activeClassName="active" onClick={() => props.dispatch(menuToggle())} >
             Home
@@ -65,7 +65,10 @@ export function Header(props) {
       </NavLink>
         <h2 className="subtitle">Tracking life lessons one day at a time</h2>
         {dropDownMenu}
-        <FontAwesome name='bars' size="3x" className="menu-button" onClick={()=> props.dispatch(menuToggle())}/>
+        <FontAwesome name='bars' 
+        size="3x" 
+        className="menu-button" 
+        onClick={()=> props.dispatch(menuToggle())}/>
         {/* make button toggle menu state */}
         {/* menu has absolute position - ignore everything else, put it here */}
         {/* if there is a problem having it show, change z index (depth from user) */}
