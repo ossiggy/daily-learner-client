@@ -99,6 +99,16 @@
 
 /* fix padding of actual text, not the container */
 
+@media screen and (max-width: 1015px){
+ .top{
+    padding-left: 15px !important;
+  }
+
+  .bottom{
+    padding-right: 25px;
+  }
+}
+
 @media screen and (max-width: 530px){
   .about-title h1{
     font-size: 50px;
@@ -118,9 +128,18 @@
 
   .bottom{
     padding: 15px !important;
-    margin-top: 25px !important;
   }
 
+}
+
+@media screen and (max-width: 600px){
+  .bottom{
+    margin-top: 35px !important;
+  }
+
+  .top{
+    margin-top: 60px !important;
+  }
 }
 
 @media screen and (max-width: 885px){
@@ -143,7 +162,7 @@
   }
   
   .top{
-    margin-top: 65px;
+    margin-top: 85px;
     border-radius: 50px;
     z-index: 1;
   }
@@ -151,7 +170,7 @@
   .bottom{
     z-index: 1;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 65px;
     padding: 10px; 
   }
 

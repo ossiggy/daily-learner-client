@@ -13,10 +13,6 @@ export class LoginForm extends React.Component {
     return this.props.dispatch(login(values.username, values.password));
   }
 
-  toSignUp(event){
-    event.preventDefault();
-  }
-
   render() {
     return (
       <form
