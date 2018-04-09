@@ -5,8 +5,6 @@ import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
-// TODO: make registration form shorter with option to fill out firstName/lastName later
-
 export class RegistrationForm extends React.Component {
   onSubmit(values) {
     const {username, password, email} = values;

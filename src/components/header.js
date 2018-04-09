@@ -8,8 +8,6 @@ import LoginForm from './login-form';
 
 const FontAwesome = require('react-fontawesome');
 
-// give all header elements size options (small medium large)
-
 export function Header(props) {
 
   let dropDownMenu;
@@ -69,9 +67,6 @@ export function Header(props) {
         size="3x" 
         className="menu-button" 
         onClick={()=> props.dispatch(menuToggle())}/>
-        {/* make button toggle menu state */}
-        {/* menu has absolute position - ignore everything else, put it here */}
-        {/* if there is a problem having it show, change z index (depth from user) */}
       </div>
       <TopNav />
     </header>

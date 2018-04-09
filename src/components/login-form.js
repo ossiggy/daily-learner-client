@@ -6,8 +6,6 @@ import {login, menuToggle} from '../actions';
 import {required, nonEmpty} from '../validators';
 import './header.css';
 
-//demo mode button
-
 export class LoginForm extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));

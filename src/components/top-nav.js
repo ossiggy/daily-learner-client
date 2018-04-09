@@ -4,8 +4,6 @@ import {NavLink, Link} from 'react-router-dom';
 import {logout} from '../actions';
 import LoginForm from './login-form';
 import './header.css';
- 
-//TODO: add login and register buttons
 
 export function TopNav(props) {
   if(props.loggedIn){

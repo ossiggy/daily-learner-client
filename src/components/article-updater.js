@@ -80,6 +80,7 @@ export class ArticleUpdater extends React.Component{
                 <option value="social">Social</option>
                 <option value="personal">Personal</option>
                 <option value="spiritual">Spiritual</option>
+                <option value="fitness">Fitness</option>
               </Field>
               <button
                 type="submit"
