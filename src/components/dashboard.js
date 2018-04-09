@@ -20,6 +20,7 @@ export class Dashboard extends React.Component {
     let work = 0;
     let social = 0;
     let spiritual = 0;
+    let fitness = 0;
     if(this.props.articles){
       this.props.articles.forEach(article => {
         if(article.category==='school'){
@@ -36,6 +37,9 @@ export class Dashboard extends React.Component {
         }
         if(article.category==='spiritual'){
           spiritual++;
+        }
+        if(article.category==='fitness'){
+          fitness++
         }
       });
     }
@@ -57,6 +61,7 @@ export class Dashboard extends React.Component {
             <li className='spiritual'>Spiritual: {spiritual}</li>
             <li className='social'>Social: {social}</li>
             <li className='personal'>Personal: {personal}</li>
+            <li classname='fitness'>Fitness: {fitness}</li>
           </ul>
         </div>
       </div>
