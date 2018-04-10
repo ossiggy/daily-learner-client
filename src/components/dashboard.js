@@ -61,7 +61,7 @@ export class Dashboard extends React.Component {
             <li className='spiritual'>Spiritual: {spiritual}</li>
             <li className='social'>Social: {social}</li>
             <li className='personal'>Personal: {personal}</li>
-            <li classname='fitness'>Fitness: {fitness}</li>
+            <li className='fitness'>Fitness: {fitness}</li>
           </ul>
         </div>
       </div>

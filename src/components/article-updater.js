@@ -26,8 +26,6 @@ export class ArticleUpdater extends React.Component{
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
-
-    let successMessage;
     
     if(this.props.submitSucceeded) {
       alert('Success!')
