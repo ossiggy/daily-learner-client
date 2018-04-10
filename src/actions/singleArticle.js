@@ -145,7 +145,7 @@ export const deleteArticle = (id) => (dispatch, getState) => {
     .then(() => dispatch(fetchAllArticles()));
 };
 
-// form reset action that will reset article form when component unmounts or action is called
+// form reset action that will reset article form when component unmounts
 export const RESET = 'RESET';
 export const reset = () => ({
   type: RESET

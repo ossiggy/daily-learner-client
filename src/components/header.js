@@ -11,6 +11,11 @@ const FontAwesome = require('react-fontawesome');
 export function Header(props) {
 
   let dropDownMenu;
+  let username
+
+  if(props.loggedIn){
+    username = <div className="username">{props.currentUser.username}</div>
+  }
 
   if(props.menuOpen && props.loggedIn){
     dropDownMenu = (
@@ -62,6 +67,7 @@ export function Header(props) {
         <h1 className="main-title">Daily Learner</h1>
       </NavLink>
         <h2 className="subtitle">Tracking life lessons one day at a time</h2>
+        {username}
         {dropDownMenu}
         <FontAwesome name='bars' 
         size="3x" 
@@ -76,7 +82,8 @@ export function Header(props) {
 const mapStateToProps = state => {
   return {
     menuOpen: state.menu.menuOpen,
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    currentUser: state.auth.currentUser
   };
 };
 

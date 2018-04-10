@@ -21,7 +21,6 @@ export function TopNav(props) {
         <NavLink to="/" activeClassName="active" className="col-3 navLink">
           About
         </NavLink>
-        <div className="username col-3">{props.currentUser.username}</div>
         <button className="logout-button col-1" onClick={()=>props.dispatch(logout())}>Log out</button>
       </nav> 
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {fetchArticle} from '../actions';
@@ -24,6 +24,9 @@ export class Article extends React.Component{
           <span>Category: {this.props.category}</span><br></br>
           <span>{this.props.dateCreated}</span>
         </div>
+        <Link to='/dashboard'>
+          <button className="go-back" type='submit'>Go Back</button>
+        </Link>
       </article>
     );
   }

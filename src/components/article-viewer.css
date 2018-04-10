@@ -1,7 +1,11 @@
 
 .update {
-  color: white;
-  padding-left: 10px;
+  color: rgba(140, 203, 140, 0.98);
+  padding-right: 30px;
+}
+
+.trash {
+  color: #FD6464;
 }
 
 .update:hover{
@@ -29,7 +33,7 @@
 
 .article-title{
   font-size: 20px;
-  width: 300px;
+  width: 100%;
   height: 50px;
   border-radius: 50px;
   background-color: #02174E;

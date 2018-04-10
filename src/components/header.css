@@ -17,6 +17,19 @@
   padding-left: 5px;
 }
 
+.head-box a{
+  margin-right: 0 !important;
+}
+
+.username{
+  font-size: 16px;
+  display: inline-block;
+  position: absolute;
+  right: 70px;
+  top: 25px;  
+  color: lightskyblue;
+}
+
 .menu-button {
   height: 50px;
   width: 50px;
@@ -183,9 +196,6 @@
   .navLink{
     display: none;
   }
-  .username{
-    display: none;
-  }
 
   .logout-button{
     display: none;
@@ -203,10 +213,17 @@
   }
 
   .username{
-    display: none;
+    font-size: 16px;
+    top: 25px;
   }
 
   .logout-button{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .username{
     display: none;
   }
 }
@@ -226,7 +243,7 @@
   }
 }
 
-@media screen and (max-width: 1055px){
+@media screen and (max-width: 1015px){
   .subtitle {
     display: none !important;
   }
@@ -236,7 +253,8 @@
 
   .main-title, .subtitle {
     margin: 0px;
-    display: inline;
+    padding: 0;
+    display: inline-block;
   }
 
   .main-title{
@@ -244,7 +262,13 @@
   }
 
   .subtitle{
-    font-size: 16px;
+    font-size: 15px;
+    color: lightskyblue;
+  }
+
+  .username {
+    top: 23px;
+    right: 90px;
   }
 
   .info-section{
@@ -263,19 +287,18 @@
   }
 
   .nav{
+    font-size: 20px;
     height: 65px;
     width: 60%;
-    display: inline-block;
     padding-right: 10px;
-    text-align: right;
-    vertical-align: center;
-    padding-top: 20px;
+    padding-top: 18px;
   }
 
   .logout-button{
+    margin-top: 2px;
     width: 80px;
     float: right;
-    height: 28px;
+    height: 30px;
     font-size: 16px;
     border-radius: 20px;
   }
@@ -284,7 +307,8 @@
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 20px;
+    text-decoration: none;
   }
 
   .header div{

@@ -16,12 +16,15 @@ export class ArticleViewer extends Component {
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
-    let articles = 'no articles here';
-    if(this.props.loading){
-      articles = <h2>loading</h2>;
-    }
-  
+    let articles;
+    let goBack;
+
     if(this.props.articles){
+      goBack = (
+        <Link to='/dashboard'>
+          <button className="go-back" type='submit'>Go Back</button>
+        </Link>
+      )
       if(!Object.keys(this.props.articles)){
         articles = 'Write down today\'s lesson to start tracking your daily learning!';
       }
@@ -37,7 +40,7 @@ export class ArticleViewer extends Component {
               <Link to={`/update/${article.id}`}>
                 <FontAwesome name="pencil" size="2x" className="update"/>
               </Link>
-              <FontAwesome name="trash-o" size="2x" className="update" onClick={()=>this.props.dispatch(deleteArticle(article.id))} />
+              <FontAwesome name="trash-o" size="2x" className="update trash" onClick={()=>this.props.dispatch(deleteArticle(article.id))} />
             </div>
           </div>;
         });
@@ -49,9 +52,7 @@ export class ArticleViewer extends Component {
         <h2 className="col-6 offset-3">Previous Lessons</h2>
         <div className="col-6 offset-3 article-div">
           {articles}
-          <Link to='/dashboard'>
-            <button className="go-back" type='submit'>Go Back</button>
-          </Link>
+          {goBack}
         </div>
       </div>
     );
@@ -62,7 +63,6 @@ export const mapStateToProps = state => {
   return {
     articles: state.articles.data,
     loggedIn: state.auth.currentUser !== null,
-    loading: state.articles.loading
   };
 };
 
