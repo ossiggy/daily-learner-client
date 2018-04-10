@@ -50,7 +50,6 @@ export const singleArticleReducer = (state=initialState, action) => {
     });
   }
   if(action.type === actions.UPDATE_ARTICLE_REQUEST) {
-    debugger;
     return Object.assign({}, state, {
       loading: true
     });
