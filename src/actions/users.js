@@ -21,7 +21,14 @@ export const fetchUserError =(err) => ({
 });
 
 export const fetchUser = () => dispatch => {
-  return fetch(`${API_BASE_URL}/users/:id`).then(res => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/users/:id`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      mode: 'cors'
+    }
+  }).then(res => {
     if(!res.ok) {
       return Promise.reject(res.statusText);
     }
