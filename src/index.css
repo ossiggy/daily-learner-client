@@ -23,3 +23,7 @@ button {
 button:active{
   transform: translateY(4px);
 }
+
+button:focus{
+  outline: none;
+}

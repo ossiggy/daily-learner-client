@@ -37,3 +37,14 @@
   text-align: center;
 }
 
+.back-to-dash {
+  background-color: white;
+  color: #02174E;
+  border-color: #02174E;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+

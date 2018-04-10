@@ -14,7 +14,7 @@ export class LoginForm extends React.Component {
   render() {
     return (
       <form
-        className="login-form col-12"
+        className="login-form"
         onSubmit={this.props.handleSubmit(values =>this.onSubmit(values)
         )}>
         <div className="col-4">

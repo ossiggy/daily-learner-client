@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
@@ -47,6 +48,9 @@ export class RegistrationForm extends React.Component {
           name="confirm"
           validate={[required, nonEmpty, matches('password')]}
         />
+        <Link to='/dashboard'>
+          <button className="back-to-dash" type='submit'>Go Back</button>
+        </Link>
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}

@@ -9,6 +9,10 @@
   height: 65px;
 }
 
+.register-container.nav{
+  margin: 0;
+}
+
 .header h1:hover{
   color: lightgray;
 }
@@ -122,6 +126,9 @@
 }
 
 .login-form{
+  position: absolute;
+  top: 20px;
+  right: 5px;
   background-color: #02174E;
   border-radius: 25px;
   font-family: 'Poppins', sans-serif;
@@ -243,7 +250,7 @@
   }
 }
 
-@media screen and (max-width: 1015px){
+@media screen and (max-width: 1050px){
   .subtitle {
     display: none !important;
   }
@@ -295,7 +302,7 @@
   }
 
   .logout-button{
-    margin-top: 2px;
+    margin-top: 5px;
     width: 80px;
     float: right;
     height: 30px;

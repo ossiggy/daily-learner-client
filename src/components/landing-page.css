@@ -93,10 +93,6 @@
   box-shadow: 10px 8px 16px 2px #262626;
 }
 
-.demo-mode:focus{
-  outline: none;
-}
-
 /* fix padding of actual text, not the container */
 
 @media screen and (max-width: 1015px){
