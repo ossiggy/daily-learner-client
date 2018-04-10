@@ -10,7 +10,6 @@ export class ArticleForm extends React.Component {
   
   onSubmit(article) {
     this.props.dispatch(postArticle(article))
-      .then(() => alert('Submitted!'));
   }
   
   render(){
@@ -21,10 +20,18 @@ export class ArticleForm extends React.Component {
     let successMessage;
 
     if(this.props.submitSucceeded) {
-      this.props.dispatch(alert('Submitted!'));
+      return <Redirect to='/articles' />
     }
 
     let errorMessage;
+
+    if(this.props.error){
+      errorMessage =(
+        <div className="lesson-learned-error">
+          {this.props.error}
+        </div>
+      );
+    }
 
     return (
       <div className='row'>

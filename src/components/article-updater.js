@@ -28,7 +28,6 @@ export class ArticleUpdater extends React.Component{
     }
     
     if(this.props.submitSucceeded) {
-      alert('Success!')
       return <Redirect to='/articles' />
     }
     

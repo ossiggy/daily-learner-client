@@ -12,6 +12,11 @@ export class LoginForm extends React.Component {
   }
 
   render() {
+
+    if(this.props.submitSucceeded) {
+      return <Redirect to='/articles' />
+    }
+    
     return (
       <form
         className="login-form col-12"
