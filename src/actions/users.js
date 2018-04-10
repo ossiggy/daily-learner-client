@@ -20,7 +20,7 @@ export const fetchUserError =(err) => ({
   error: err
 });
 
-export const fetchUser = () => dispatch => {
+export const fetchUser = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/users/:id`, {
     method: 'GET',
