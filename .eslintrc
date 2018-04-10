@@ -4,7 +4,7 @@
 
     */
 
-  "plugins": ["react","jsx-a11y"],
+  "plugins": ["react"],
   // "env:" supplies predefined global variables
   "env": {
     "browser": true,
@@ -14,8 +14,7 @@
   // as well as the recommended base config for react
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:react/recommended"
   ],
   // define the type of file `script` or `module` for ES6 Modules
   "parserOptions": {
