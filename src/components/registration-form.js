@@ -63,7 +63,6 @@ export class RegistrationForm extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.user)
   return{
   error: state.user.error
   }
