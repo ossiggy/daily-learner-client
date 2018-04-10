@@ -59,7 +59,8 @@ describe('fetchAllArticles', () => {
       expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles`, {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${authToken}`
+          Authorization: `Bearer ${authToken}`,
+          mode: 'cors'
         }
       });
       expect(dispatch).toHaveBeenCalledWith(fetchAllArticlesSuccess(article));
