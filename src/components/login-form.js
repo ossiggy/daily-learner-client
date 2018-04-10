@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {Link} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import Input from './input';
 import {login, menuToggle} from '../actions';
 import {required, nonEmpty} from '../validators';
@@ -12,11 +12,6 @@ export class LoginForm extends React.Component {
   }
 
   render() {
-
-    if(this.props.submitSucceeded) {
-      return <Redirect to='/articles' />
-    }
-    
     return (
       <form
         className="login-form col-12"
@@ -55,7 +50,12 @@ export class LoginForm extends React.Component {
   }
 }
 
+const afterSubmit = () => {
+  return <Redirect to='/articles' />
+};
+
 export default LoginForm = reduxForm({
   form: 'login',
+  onSubmitSuccess: afterSubmit,
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);

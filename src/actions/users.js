@@ -60,7 +60,6 @@ export const registerUser = user => dispatch => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .catch(err => {
-      registerUserError(err)  
       const {reason, message, location} = err;
       if (reason === 'ValidationError') {
         return Promise.reject(

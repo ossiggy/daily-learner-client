@@ -1,9 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import {required, nonEmpty, matches, length, isTrimmed, email} from '../validators';
 
 export class RegistrationForm extends React.Component {
 
@@ -15,6 +16,7 @@ export class RegistrationForm extends React.Component {
       .then(() => this.props.dispatch(login(username, password)))
       .catch((err) => alert(err.errors.username));
   }
+
   render() {
 
     return (
@@ -23,7 +25,7 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
         )}>
         <label htmlFor="email">e-mail</label>
-        <Field component={Input} type="text" name="email" />
+        <Field component={Input} type="text" name="email" validate={[email]}/>
         <label htmlFor="username">Username</label>
         <Field
           component={Input}
@@ -56,8 +58,17 @@ export class RegistrationForm extends React.Component {
   }
 }
 
-export default RegistrationForm = reduxForm({
-  form: 'registration',
+const mapStateToProps = state => {
+  console.log(state.user)
+  return{
+  error: state.user.error
+  }
+}
+
+RegistrationForm = reduxForm({
+  form: 'RegistrationForm',
   onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('registration', Object.keys(errors)[0]))
+    dispatch(focus('RegistrationForm', Object.keys(errors)[0]))
 })(RegistrationForm);
+
+export default connect(mapStateToProps)(RegistrationForm)

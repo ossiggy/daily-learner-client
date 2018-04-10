@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect, Link} from 'react-router-dom';
-import {reduxForm, Field, focus, reset, formValueSelector} from 'redux-form';
+import {reduxForm, Field, focus, formValueSelector} from 'redux-form';
 import {connect} from 'react-redux';
 
 import './article-form.css';
@@ -87,8 +87,8 @@ export class ArticleForm extends React.Component {
   }
 }
 
-const afterSubmit = (results, dispatch) => {
-  dispatch(reset('ArticleForm'));
+const afterSubmit = () => {
+  return <Redirect to='/articles' />
 };
 
 ArticleForm = reduxForm({

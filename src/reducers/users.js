@@ -38,6 +38,7 @@ export const userReducer = (state=initialState, action) => {
     });
   }
   if(action.type === actions.REGISTER_USER_ERROR) {
+    console.log(action.error);
     return Object.assign({}, state, {
       error: action.error,
       loading: false
