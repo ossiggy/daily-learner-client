@@ -3,41 +3,6 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
-export const fetchUserSuccess = user => ({
-  type: FETCH_USER_SUCCESS,
-  user
-});
-
-export const FETCH_USER_REQUEST ='FETCH_USER_REQUEST';
-export const fetchUserRequest = () => ({
-  type: FETCH_USER_REQUEST
-});
-
-export const FETCH_USER_ERROR = 'FETCH_USER_ERROR';
-export const fetchUserError =(err) => ({
-  type: FETCH_USER_ERROR,
-  error: err
-});
-
-export const fetchUser = () => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/users/:id`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-      mode: 'cors'
-    }
-  }).then(res => {
-    if(!res.ok) {
-      return Promise.reject(res.statusText);
-    }
-    return res.json();
-  }).then(user => {
-    dispatch(fetchUserSuccess(user));
-  });
-};
-
 export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
 export const registerUserSuccess = user => ({
   type: REGISTER_USER_SUCCESS,
