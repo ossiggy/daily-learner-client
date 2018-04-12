@@ -15,6 +15,31 @@ import {
   registerUser
 } from './users';
 
+describe('fetchUserSuccess', () => {
+  it('Should return the action', () => {
+    const user = {username: 'name'};
+    const action = fetchUserSuccess(user);
+    expect(action.type).toEqual(FETCH_USER_SUCCESS);
+    expect(action.user).toEqual({username: 'name'});
+  });
+});
+
+describe('fetchUserRequest', () => {
+  it('Should return the action', () => {
+    const action = fetchUserRequest();
+    expect(action.type).toEqual(FETCH_USER_REQUEST);
+  });
+});
+
+describe('fetchUserError', () => {
+  it('Should return the action', () => {
+    const error = 'error';
+    const action = fetchUserError(error);
+    expect(action.type).toEqual(FETCH_USER_ERROR);
+    expect(action.error).toEqual('error');
+  });
+});
+
 describe('registerUserSuccess', () => {
   it('Should return the action', () => {
     const user = {username: 'name'};

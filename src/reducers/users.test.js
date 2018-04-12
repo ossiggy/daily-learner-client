@@ -18,6 +18,43 @@ describe('userReducer', () => {
     expect(state).toBe(currentState);
   });
 
+  describe('fetchUserSuccess', () => {
+    it('Should add the user to the state', () => {
+      const user = {
+        username: 'user'
+      };
+      const state = userReducer(undefined, actions.fetchUserSuccess(user));
+      expect(state).toEqual({
+        data: user,
+        error: null,
+        loading: false
+      });
+    });
+  });
+
+  describe('fetchUserRequest', () => {
+    it('Should set state loading to true', () => {
+      const state = userReducer(undefined, actions.fetchUserRequest());
+      expect(state).toEqual({
+        data:null,
+        error:null,
+        loading:true
+      });
+    });
+  });
+
+  describe('fetchUserError', () => {
+    it('Should return an error', () => {
+      const error = 'err';
+      const state = userReducer(undefined, actions.fetchUserError(error));
+      expect(state).toEqual({
+        data:null,
+        error:error,
+        loading:false
+      });
+    });
+  });
+
   describe('registerUserSuccess', () => {
     it('Should add the user to the state', () => {
       const user = {
