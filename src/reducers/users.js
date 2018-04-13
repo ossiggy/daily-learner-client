@@ -9,7 +9,6 @@ const initialState = {
 export const userReducer = (state=initialState, action) => {
 
   if(action.type === actions.REGISTER_USER_SUCCESS) {
-    console.log(action.user);
     return Object.assign({}, state, {
       data: action.user,
       loading: false
@@ -21,7 +20,6 @@ export const userReducer = (state=initialState, action) => {
     });
   }
   if(action.type === actions.REGISTER_USER_ERROR) {
-    console.log(action.error);
     return Object.assign({}, state, {
       error: action.error,
       loading: false

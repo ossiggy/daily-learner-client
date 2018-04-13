@@ -25,7 +25,6 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 export const login = (username, password) => dispatch => {
-  console.log('logging in');
   return (
     fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
