@@ -245,8 +245,11 @@ describe('deleteArticle', () => {
       const authToken = getState().auth.authToken;
       expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/articles/${id}`, {
         method: 'delete',
-        Authorization: `Bearer: ${authToken}`,
-        mode: 'cors'
+        headers:
+          {
+            Authorization: `Bearer ${authToken}`,
+            mode: 'cors'
+          }
       });
       expect(dispatch).toHaveBeenCalledWith(deleteArticleSuccess());
     });
