@@ -196,7 +196,7 @@ describe('updateArticle', () => {
         method: 'PUT',
         headers: {
           'content-type': 'application/json',
-          Authorization: `Bearer: ${authToken}`
+          Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(article)
       });
