@@ -52,8 +52,8 @@ export function Header(props) {
 
   if(props.menuOpen && !props.loggedIn){
     dropDownMenu = (
-    <div className="dropdown-menu col-3">
-      <div className="menu-option">
+    <div className="dropdown-menu col-3" onMouseLeave={()=> props.dispatch(menuToggle())}>
+      <div className="form-container">
         <LoginForm />
       </div>
     </div>

@@ -71,14 +71,16 @@ export class ArticleForm extends React.Component {
                 <option value="spiritual">Spiritual</option>
                 <option value="fitness">Fitness</option>
               </Field>
-              <button
-                type="submit"
-                disabled={this.props.pristine || this.props.submitting}>
-                  Submit
-              </button>
-              <Link to='/dashboard'>
-                <button className="go-back-form" type='submit'>Go Back</button>
-              </Link>
+              <div className="form-button-container col-12">
+                <button
+                  type="submit"
+                  disabled={this.props.pristine || this.props.submitting}>
+                    Submit
+                </button>
+                <Link to='/dashboard'>
+                  <button className="go-back-form" type='submit'>Go Back</button>
+                </Link>
+              </div>
             </div>
           </form>
         </div>

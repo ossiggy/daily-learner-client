@@ -107,7 +107,7 @@
 .form-error{
   color: red !important;
   position: absolute;
-  top:1px;
+  top:-22px;
   font-size: 16px;
   padding-left: 50px;
 }
@@ -128,10 +128,11 @@
 .login-form{
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 0;
   background-color: #02174E;
   border-radius: 25px;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
 .login-form h3, .login-form label{
@@ -238,6 +239,11 @@
 @media screen and (max-width: 1015px){
   .register-container{
     display: none !important;
+  }
+  .login-form{
+    position: absolute;
+    top: 0px;
+    right: 0;
   }
   .header h1{
     font-size: 28px;

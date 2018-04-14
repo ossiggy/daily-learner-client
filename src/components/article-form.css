@@ -33,7 +33,7 @@ select{
 .article-form button{
   height: 40px;
   width: 90px;
-  font-size: 20px;
+  font-size: 18px;
   float: right;
   border-radius: 50px;
 }
@@ -60,9 +60,9 @@ select{
   background-color: white;
   color: #02174E;
   border-color: #02174E;
-  width: 150px;
-  height: 50px;
-  font-size: 25px;
-  border-radius: 50px;
-  margin-right: 10px;
+  margin-right: 15px;
+}
+
+.form-button-container{
+  margin-top: 20px;
 }

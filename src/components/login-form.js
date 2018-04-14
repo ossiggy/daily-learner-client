@@ -51,7 +51,7 @@ export class LoginForm extends React.Component {
 }
 
 const afterSubmit = () => {
-  return <Redirect to='/articles' />
+  return <Redirect to='/dashboard' />
 };
 
 export default LoginForm = reduxForm({
