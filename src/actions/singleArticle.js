@@ -99,7 +99,7 @@ export const updateArticle = article => (dispatch, getState) => {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',
-      Authorization: `Bearer: ${authToken}`
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(article)
   })
