@@ -139,7 +139,7 @@ export const deleteArticle = (id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/articles/${id}`, {
     method: 'DELETE',
     headers:{
-      Authorization: `Bearer: ${authToken}`,
+      Authorization: `Bearer ${authToken}`,
       mode: 'cors'
     }
   }).then(() => dispatch(deleteArticleSuccess()))
