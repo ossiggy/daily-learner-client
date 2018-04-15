@@ -5,6 +5,12 @@
   padding-left: 15px;
 }
 
+@media screen and (max-width: 947){
+  .update{
+    padding-left: 10px;
+  }
+}
+
 .trash {
   color: #FD6464;
 }
