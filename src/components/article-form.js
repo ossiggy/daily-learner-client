@@ -78,7 +78,7 @@ export class ArticleForm extends React.Component {
                     Submit
                 </button>
                 <Link to='/dashboard'>
-                  <button className="go-back-form" type='submit'>Go Back</button>
+                  <button className="go-back-form" type='submit'>Back</button>
                 </Link>
               </div>
             </div>

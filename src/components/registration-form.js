@@ -49,7 +49,7 @@ export class RegistrationForm extends React.Component {
           validate={[required, nonEmpty, matches('password')]}
         />
         <Link to='/dashboard'>
-          <button className="back-to-dash" type='submit'>Go Back</button>
+          <button className="back-to-dash" type='submit'>Back</button>
         </Link>
         <button
           type="submit"

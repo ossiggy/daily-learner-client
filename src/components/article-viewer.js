@@ -22,7 +22,7 @@ export class ArticleViewer extends Component {
     if(this.props.articles){
       goBack = (
         <Link to='/dashboard'>
-          <button className="go-back" type='submit'>Go Back</button>
+          <button className="go-back" type='submit'>Back</button>
         </Link>
       )
       if(!Object.keys(this.props.articles)){

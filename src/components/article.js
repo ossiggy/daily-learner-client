@@ -25,7 +25,7 @@ export class Article extends React.Component{
           <span>{this.props.dateCreated}</span>
         </div>
         <Link to='/articles'>
-          <button className="go-back" type='submit'>Go Back</button>
+          <button className="go-back" type='submit'>Back</button>
         </Link>
       </article>
     );
