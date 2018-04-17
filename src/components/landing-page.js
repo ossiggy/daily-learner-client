@@ -44,7 +44,7 @@ export function LandingPage(props){
         <div className="site-info-container col-6">
           <p className="site-info bottom col-12">Enter: Daily Learner.  This app was designed specifically to keep track of your hard earned
             life lessons and organize them in an easily searchable database.  Just write down your lesson,
-            add an applicable category, and viola! You can now track all the knowledge you gain on a daily basis.
+            add an applicable category, and voila! You can now track all the knowledge you gain on a daily basis.
           </p>
         </div>
       </section>
