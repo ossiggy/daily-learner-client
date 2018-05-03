@@ -192,15 +192,11 @@
     margin-top: 15px;
   }
   
-  .github-link{
+  .hublink:link, .hublink:visited{
     color: white !important;
   }
 
-  .github-link:visited{
-    color: white !important;
-  }
-
-  .github-link:hover{
+  .hublink:hover{
     color: lightgray !important;
   }
 }
