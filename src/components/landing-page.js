@@ -51,7 +51,7 @@ export function LandingPage(props){
       <div className="register-login col-6 offset-3">
         {dashboard}
       </div>
-      <section className="author col-12">Built by Michael Ossig (GitHub: ossiggy)</section>
+      <section className="author col-12">Built by Michael Ossig <a href="https://github.com/ossiggy">(GitHub: ossiggy)</a></section>
     </div>
   );
 }
