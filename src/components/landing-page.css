@@ -191,4 +191,16 @@
     height: 300px;
     margin-top: 15px;
   }
+  
+  .github-link{
+    color: white !important;
+  }
+
+  .github-link:visited{
+    color: white !important;
+  }
+
+  .github-link:hover{
+    color: lightgray !important;
+  }
 }
