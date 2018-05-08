@@ -22,6 +22,9 @@
 
 .article-link{
   margin-top: 10px;
+  background-color: #02174E;
+  border-radius: 25px;
+  padding: 5px;
 }
 
 .article-viewer h2{
