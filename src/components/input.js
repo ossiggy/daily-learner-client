@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './input.css';
 
 export default class Input extends React.Component {
@@ -10,7 +9,9 @@ export default class Input extends React.Component {
     }
   }
 
+  
   render() {
+  
 
     return (
       <div className="form-input">

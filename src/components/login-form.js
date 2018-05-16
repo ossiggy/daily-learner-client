@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {Redirect, Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
 import Input from './input';
 import {login, menuToggle} from '../actions';
 import {required, nonEmpty} from '../validators';
@@ -57,5 +58,13 @@ const afterSubmit = () => {
 export default LoginForm = reduxForm({
   form: 'login',
   onSubmitSuccess: afterSubmit,
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(LoginForm);
+  onSubmitFail: (errors, dispatch) => {
+    toast.error(errors._error, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: false,
+      });
+    dispatch(focus('login', 'username'))
+}})(LoginForm);

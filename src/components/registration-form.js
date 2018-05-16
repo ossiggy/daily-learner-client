@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
@@ -70,8 +71,15 @@ const mapStateToProps = state => {
 
 RegistrationForm = reduxForm({
   form: 'RegistrationForm',
-  onSubmitFail: (errors, dispatch) =>
+  onSubmitFail: (errors, dispatch) =>{
+  toast.error(errors._error, {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    draggable: false,
+    })
     dispatch(focus('RegistrationForm', Object.keys(errors)[0]))
-})(RegistrationForm);
+}})(RegistrationForm);
 
 export default connect(mapStateToProps)(RegistrationForm)

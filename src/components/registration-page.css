@@ -9,6 +9,8 @@
 
 .toSignIn, .registration-form button{
   margin-top:10px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .form-input input, .registration-form label{

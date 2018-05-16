@@ -1,3 +1,8 @@
+.landing-page{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .landing-page h1{
   text-align: center;
   font-size: 80px;
@@ -20,6 +25,10 @@
   margin-bottom: 10px;
   border-radius: 150px;
   box-shadow: 10px 8px 16px 2px #262626;
+}
+
+#top-pill{
+  margin-top: 100px;
 }
 
 .site-info {
@@ -93,6 +102,14 @@
   box-shadow: 10px 8px 16px 2px #262626;
 }
 
+.to-register{
+  margin-top: 35px;
+}
+
+#get-started{
+  font-size: 35px;
+}
+
 /* fix padding of actual text, not the container */
 
 @media screen and (max-width: 1015px){
@@ -123,14 +140,14 @@
   }
 
   .bottom{
-    padding: 15px !important;
+    padding: 25px !important;
   }
 
 }
 
 @media screen and (max-width: 600px){
   .bottom{
-    margin-top: 35px !important;
+    margin-top: 15px !important;
   }
 
   .top{
@@ -191,12 +208,12 @@
     height: 300px;
     margin-top: 15px;
   }
-  
-  .hublink:link, .hublink:visited{
-    color: white !important;
-  }
+}
 
-  .hublink:hover{
-    color: lightgray !important;
-  }
+.hublink:link, .hublink:visited{
+  color: white !important;
+}
+
+.hublink:hover{
+  color: lightgray !important;
 }

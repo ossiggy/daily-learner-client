@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   font-family: 'Bad Script', cursive;
-  z-index: 10;
+  z-index: 1;
   height: 65px;
 }
 
